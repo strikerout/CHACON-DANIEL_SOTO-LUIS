@@ -3,3 +3,37 @@
 [2024-05-11 16:42:08] [ ERROR] [Main:14] Esta es la iteración 3
 [2024-05-11 16:42:08] [ ERROR] [Main:14] Esta es la iteración 4
 [2024-05-11 16:42:08] [ ERROR] [Main:14] Esta es la iteración 5
+[2024-05-11 17:17:25] [ INFO ] [Main:24] Se obtuvo el producto: id:1-JAIFON-APPLE-2000
+[2024-05-11 17:18:45] [ ERROR] [Main:34] 
+[2024-05-11 17:20:05] [ ERROR] [Main:29] No chivio
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos puede que ya esté siendo utilizada: "C:/Users/StrikerOut/testMeet.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "C:/Users/StrikerOut/testMeet.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:165)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:228)
+	at Main.getConnection(Main.java:43)
+	at Main.main(Main.java:16)
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/StrikerOut/testMeet.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	... 11 more
+[2024-05-11 17:20:05] [ ERROR] [Main:34] 
+[2024-05-11 17:20:19] [ INFO ] [Main:24] Se obtuvo el producto: id:1-JAIFON-APPLE-2000
+[2024-05-11 17:22:27] [ INFO ] [Main:24] Se obtuvo el producto: id:1-JAIFON-APPLE-2000
+[2024-05-11 17:22:27] [ INFO ] [Main:24] Se obtuvo el producto: id:2-ETO NO E UN JAIFON-CHINCHUNWA-800
