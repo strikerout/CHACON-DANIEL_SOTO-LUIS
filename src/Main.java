@@ -1,3 +1,4 @@
+import com.backend.parcial.repository.dbconnection.H2Connection;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -13,7 +14,7 @@ public class Main {
 
         Connection connection = null;
         try {
-            connection = getConnection();
+            connection = H2Connection.getConnection();
 
             Statement statement = connection.createStatement();
             statement.execute(create);
@@ -34,10 +35,5 @@ public class Main {
                logger.error(e.getMessage());
             }
         }
-    }
-
-    public static Connection getConnection() throws ClassNotFoundException, SQLException {
-        Class.forName("org.h2.Driver");
-        return DriverManager.getConnection("jdbc:h2:~/testMeet", "sa", "sa");
     }
 }
