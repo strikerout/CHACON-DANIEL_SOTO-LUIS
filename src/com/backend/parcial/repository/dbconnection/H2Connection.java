@@ -9,4 +9,23 @@ public class H2Connection {
         Class.forName("org.h2.Driver");
         return DriverManager.getConnection("jdbc:h2:~/testMeet", "sa", "sa");
     }
+
+    public static void createTable() {
+        Connection connection = null;
+        try {
+            Class.forName("org.h2.Driver");
+            connection = DriverManager.getConnection("jdbc:h2:~/parcial;INIT=RUNSCRIPT FROM 'create.sql'", "sa", "sa");
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
+
