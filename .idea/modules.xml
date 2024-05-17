@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CHACON-DANIEL_SOTO-LUIS.iml" filepath="$PROJECT_DIR$/CHACON-DANIEL_SOTO-LUIS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CHACON-DANIEL_SOTO-LUIS.iml" filepath="$PROJECT_DIR$/.idea/CHACON-DANIEL_SOTO-LUIS.iml" />
     </modules>
   </component>
 </project>
