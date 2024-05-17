@@ -1,6 +1,5 @@
 package com.backend.parcial.repository.impl;
 
-import com.backend.parcial.Application;
 import com.backend.parcial.entity.Odontologo;
 import com.backend.parcial.repository.IDao;
 import com.backend.parcial.repository.dbconnection.H2Connection;
@@ -12,9 +11,10 @@ import java.util.List;
 
 public class OdontologoDaoH2 implements IDao<Odontologo> {
     private final Logger LOGGER = Logger.getLogger(OdontologoDaoH2.class);
+
     @Override
     public Odontologo guardar(Odontologo odontologo) {
-        final String insert = "INSERT INTO ODONTOLOGO(NUMERO_MATRICULA, NOMBRE, APELLIDO) VALUES(?, ?, ?)";
+        final String insert = "INSERT INTO ODONTOLOGOS(NUMERO_MATRICULA, NOMBRE, APELLIDO) VALUES(?, ?, ?)";
         Connection connection = null;
         Odontologo odontologoGuardado = null;
 
@@ -46,7 +46,7 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
                     connection.rollback();
                     LOGGER.error("Ha ocurrido un problema, deshaciendo cambios. " + exception.getMessage());
                     exception.printStackTrace();
-                }catch (SQLException sqlException) {
+                } catch (SQLException sqlException) {
                     LOGGER.error(sqlException.getMessage());
                     sqlException.printStackTrace();
                 }
@@ -68,16 +68,17 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
         List<Odontologo> listaOdontologos = new ArrayList<>();
         Connection connection = null;
 
-        try{
+        try {
             connection = H2Connection.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query);
 
             ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 Odontologo odontologo = new Odontologo(resultSet.getLong("id"), resultSet.getLong("numero_matricula"), resultSet.getString("nombre"), resultSet.getString("apellido"));
 
                 listaOdontologos.add(odontologo);
             }
+            LOGGER.info("Odontólogos obtenidos exitosamente: " + listaOdontologos);
 
         } catch (Exception exception) {
             LOGGER.error(exception.getMessage());
