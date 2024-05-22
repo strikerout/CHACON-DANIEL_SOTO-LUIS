@@ -12,8 +12,8 @@ Proporciona herramientas para registrar datos de pacientes, programar citas, adm
 
 El proyecto está siendo desarrollado por:
 
-- **Daniel Chacón** - [@danielchacon](https://github.com/strikerout)
-- **Luis Soto** - [@luissoto](https://github.com/luisesotor)
+- **Daniel Chacón** - [@strikerout](https://github.com/strikerout)
+- **Luis Soto** - [@luisesotor](https://github.com/luisesotor)
 
 ## 📂 Estructura del Repositorio
 
@@ -29,6 +29,6 @@ Aún no hemos generado la documentación, el proyecto se mantiene en constante c
 Si tienes alguna pregunta, sugerencia o problema con el proyecto, no dudes en ponerte en contacto con nosotros:
 
 - **Daniel Chacón**: [dani3l.uebp@gmail.com](mailto:correo@example.com)
-- **Luis Soto**: [luissoto@example.com](mailto:correo@example.com)
+- **Luis Soto**: [luis13826@gmail.com](mailto:luis13826@gmail.com)
 
 ¡Gracias por tu interés en nuestro proyecto! 😊
