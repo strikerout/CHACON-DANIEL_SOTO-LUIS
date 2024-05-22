@@ -1,4 +1,4 @@
-package com.backend.parcial.entity;
+package com.backend.entity;
 
 public class Odontologo {
     private Long id;
@@ -52,7 +52,7 @@ public class Odontologo {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Odontólogo - Id: " + getId() + ", Número Matrícula: " + getNumMatricula() + ", Nombre: " + getNombre() + ", Apellido: " + getApellido();
     }
 }

@@ -1,7 +1,7 @@
-package com.backend.parcial.repository.impl;
+package com.backend.repository.impl;
 
-import com.backend.parcial.entity.Odontologo;
-import com.backend.parcial.repository.IDao;
+import com.backend.entity.Odontologo;
+import com.backend.repository.IDao;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class OdontologoDaoMemory implements IDao<Odontologo> {
 
-    private final Logger LOGGER = Logger.getLogger(OdontologoDaoMemory.class);
+    private static final Logger LOGGER = Logger.getLogger(OdontologoDaoMemory.class);
     List<Odontologo> listaOdontologos = new ArrayList<>();
 
     public OdontologoDaoMemory() {

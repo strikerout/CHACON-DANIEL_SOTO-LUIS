@@ -1,23 +1,8 @@
-[2024-05-16 21:23:06] [ INFO ] [Application:10] Application works :)
-[2024-05-16 22:39:42] [ ERROR] [OdontologoDaoH2:41] Tabla "ODONTOLOGO" no encontrada
-Table "ODONTOLOGO" not found; SQL statement:
-INSERT INTO ODONTOLOGO(NUMERO_MATRICULA, NOMBRE, APELLIDO) VALUES(?, ?, ?) [42102-224]
-[2024-05-16 22:39:42] [ ERROR] [OdontologoDaoH2:46] Ha ocurrido un problema, deshaciendo cambios. Tabla "ODONTOLOGO" no encontrada
-Table "ODONTOLOGO" not found; SQL statement:
-INSERT INTO ODONTOLOGO(NUMERO_MATRICULA, NOMBRE, APELLIDO) VALUES(?, ?, ?) [42102-224]
-[2024-05-16 22:40:06] [ ERROR] [OdontologoDaoH2:41] Tabla "ODONTOLOGOS" no encontrada
-Table "ODONTOLOGOS" not found; SQL statement:
-INSERT INTO ODONTOLOGOS(NUMERO_MATRICULA, NOMBRE, APELLIDO) VALUES(?, ?, ?) [42102-224]
-[2024-05-16 22:40:06] [ ERROR] [OdontologoDaoH2:46] Ha ocurrido un problema, deshaciendo cambios. Tabla "ODONTOLOGOS" no encontrada
-Table "ODONTOLOGOS" not found; SQL statement:
-INSERT INTO ODONTOLOGOS(NUMERO_MATRICULA, NOMBRE, APELLIDO) VALUES(?, ?, ?) [42102-224]
-[2024-05-16 22:41:24] [ ERROR] [OdontologoDaoH2:41] Tabla "ODONTOLOGOS" no encontrada
-Table "ODONTOLOGOS" not found; SQL statement:
-INSERT INTO ODONTOLOGOS(NUMERO_MATRICULA, NOMBRE, APELLIDO) VALUES(?, ?, ?) [42102-224]
-[2024-05-16 22:41:24] [ ERROR] [OdontologoDaoH2:46] Ha ocurrido un problema, deshaciendo cambios. Tabla "ODONTOLOGOS" no encontrada
-Table "ODONTOLOGOS" not found; SQL statement:
-INSERT INTO ODONTOLOGOS(NUMERO_MATRICULA, NOMBRE, APELLIDO) VALUES(?, ?, ?) [42102-224]
-[2024-05-16 22:43:54] [ INFO ] [OdontologoDaoH2:38] Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
-[2024-05-16 22:46:50] [ INFO ] [OdontologoDaoH2:80] Odontólogos obtenidos exitosamente: [Odontólogo - Id: 1, Número Matrícula: 123456, Nombre: Luis, Apellido: Soto, Odontólogo - Id: 2, Número Matrícula: 654321, Nombre: Daniel, Apellido: Chacon, Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez]
-[2024-05-16 22:47:53] [ INFO ] [OdontologoDaoMemory:32] Guardado con éxito: Odontólogo - Id: 5, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
-[2024-05-16 22:48:07] [ INFO ] [OdontologoDaoMemory:38] Odontólogos obtenidos exitosamente: [Odontólogo - Id: 1, Número Matrícula: 123654, Nombre: Pedro, Apellido: Estocolmo, Odontólogo - Id: 2, Número Matrícula: 124654, Nombre: Maria, Apellido: Barcelona, Odontólogo - Id: 3, Número Matrícula: 125654, Nombre: Fernanda, Apellido: Paris, Odontólogo - Id: 4, Número Matrícula: 126654, Nombre: Diego, Apellido: Monterrey]
+2024-05-21 22:52:49 INFO  OdontologoDaoMemory:17 - Application works :)
+2024-05-21 22:52:49 INFO  OdontologoDaoMemory:18 - Created by: Chacón Daniel & Soto Luis :)
+2024-05-21 22:58:54 INFO  OdontologoDaoMemory:17 - Application works :)
+2024-05-21 22:58:54 INFO  OdontologoDaoMemory:18 - Created by: Chacón Daniel & Soto Luis :)
+2024-05-21 23:05:59 INFO  OdontologoDaoMemory:32 - Guardado con éxito: Odontólogo - Id: 5, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-21 23:05:59 INFO  OdontologoDaoH2:39 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-21 23:05:59 INFO  OdontologoDaoH2:81 - Odontólogos obtenidos exitosamente: [Odontólogo - Id: 1, Número Matrícula: 123456, Nombre: Luis, Apellido: Soto, Odontólogo - Id: 2, Número Matrícula: 654321, Nombre: Daniel, Apellido: Chacon, Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez]
+2024-05-21 23:06:00 INFO  OdontologoDaoMemory:38 - Odontólogos obtenidos exitosamente: [Odontólogo - Id: 1, Número Matrícula: 123654, Nombre: Pedro, Apellido: Estocolmo, Odontólogo - Id: 2, Número Matrícula: 124654, Nombre: Maria, Apellido: Barcelona, Odontólogo - Id: 3, Número Matrícula: 125654, Nombre: Fernanda, Apellido: Paris, Odontólogo - Id: 4, Número Matrícula: 126654, Nombre: Diego, Apellido: Monterrey]

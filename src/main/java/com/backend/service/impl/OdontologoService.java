@@ -1,8 +1,8 @@
-package com.backend.parcial.service.impl;
+package com.backend.service.impl;
 
-import com.backend.parcial.entity.Odontologo;
-import com.backend.parcial.repository.IDao;
-import com.backend.parcial.service.IOdontologoService;
+import com.backend.entity.Odontologo;
+import com.backend.repository.IDao;
+import com.backend.service.IOdontologoService;
 
 import java.util.List;
 

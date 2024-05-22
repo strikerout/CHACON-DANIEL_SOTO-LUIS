@@ -1,13 +1,14 @@
-package com.backend.parcial.test;
+package com.backend.services;
 
-import com.backend.parcial.entity.Odontologo;
-import com.backend.parcial.repository.impl.OdontologoDaoH2;
-import com.backend.parcial.repository.impl.OdontologoDaoMemory;
-import com.backend.parcial.service.impl.OdontologoService;
+import com.backend.entity.Odontologo;
+import com.backend.repository.impl.OdontologoDaoH2;
+import com.backend.repository.impl.OdontologoDaoMemory;
+import com.backend.service.impl.OdontologoService;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 
 public class OdontologoServiceTest {
     private OdontologoService odontologoService;

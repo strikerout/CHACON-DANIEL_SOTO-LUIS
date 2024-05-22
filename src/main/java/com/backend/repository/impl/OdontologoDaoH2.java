@@ -1,8 +1,8 @@
-package com.backend.parcial.repository.impl;
+package com.backend.repository.impl;
 
-import com.backend.parcial.entity.Odontologo;
-import com.backend.parcial.repository.IDao;
-import com.backend.parcial.repository.dbconnection.H2Connection;
+import com.backend.entity.Odontologo;
+import com.backend.repository.IDao;
+import com.backend.repository.dbconnection.H2Connection;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OdontologoDaoH2 implements IDao<Odontologo> {
-    private final Logger LOGGER = Logger.getLogger(OdontologoDaoH2.class);
+    private static final Logger LOGGER = Logger.getLogger(OdontologoDaoH2.class);
 
     @Override
     public Odontologo guardar(Odontologo odontologo) {

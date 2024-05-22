@@ -1,4 +1,4 @@
-package com.backend.parcial.repository;
+package com.backend.repository;
 
 import java.util.List;
 
