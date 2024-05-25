@@ -6,3 +6,9 @@
 2024-05-21 23:05:59 INFO  OdontologoDaoH2:39 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
 2024-05-21 23:05:59 INFO  OdontologoDaoH2:81 - Odontólogos obtenidos exitosamente: [Odontólogo - Id: 1, Número Matrícula: 123456, Nombre: Luis, Apellido: Soto, Odontólogo - Id: 2, Número Matrícula: 654321, Nombre: Daniel, Apellido: Chacon, Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez]
 2024-05-21 23:06:00 INFO  OdontologoDaoMemory:38 - Odontólogos obtenidos exitosamente: [Odontólogo - Id: 1, Número Matrícula: 123654, Nombre: Pedro, Apellido: Estocolmo, Odontólogo - Id: 2, Número Matrícula: 124654, Nombre: Maria, Apellido: Barcelona, Odontólogo - Id: 3, Número Matrícula: 125654, Nombre: Fernanda, Apellido: Paris, Odontólogo - Id: 4, Número Matrícula: 126654, Nombre: Diego, Apellido: Monterrey]
+2024-05-24 21:39:51 ERROR PacienteDaoH2:47 - Table "PACIENTES" not found (this database is empty); SQL statement:
+INSERT INTO PACIENTES (DNI, NOMBRE, APELLIDO,DOMICILIO, FECHA_ALTA) VALUE(?, ?, ?, ?, ?) [42104-224]
+2024-05-24 21:39:51 ERROR PacienteDaoH2:52 - Ha ocurrido un problema, deshaciendo cambios. Table "PACIENTES" not found (this database is empty); SQL statement:
+INSERT INTO PACIENTES (DNI, NOMBRE, APELLIDO,DOMICILIO, FECHA_ALTA) VALUE(?, ?, ?, ?, ?) [42104-224]
+2024-05-24 21:39:51 ERROR PacienteDaoH2:87 - Table "PACIENTES" not found (this database is empty); SQL statement:
+SELECT * FROM PACIENTES [42104-224]
