@@ -13,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@SpringBootTest
 @ContextConfiguration(classes = {TestDatabaseConfig.class})
 public class OdontologoServiceTest {
     private OdontologoService odontologoService;

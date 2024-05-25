@@ -17,9 +17,4 @@ public class ClinicaOdontologicaApplication {
         LOGGER.info("Application works :)");
         LOGGER.info("Created by: Chacón Daniel & Soto Luis :)");
     }
-
-    @PostConstruct
-    public void init() {
-        H2Connection.createTable();
-    }
 }

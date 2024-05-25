@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@SpringBootTest
 @ContextConfiguration(classes = {TestDatabaseConfig.class})
 public class PacienteServiceTest {
     private PacienteService pacienteService;
