@@ -1,8 +1,8 @@
 package com.backend;
 
-
 import com.backend.repository.dbconnection.H2Connection;
 import com.backend.repository.impl.OdontologoDaoMemory;
+import jakarta.annotation.PostConstruct;
 import org.apache.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,4 +18,8 @@ public class ClinicaOdontologicaApplication {
         LOGGER.info("Created by: Chacón Daniel & Soto Luis :)");
     }
 
+    @PostConstruct
+    public void init() {
+        H2Connection.createTable();
+    }
 }

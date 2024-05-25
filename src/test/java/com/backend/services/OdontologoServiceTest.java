@@ -1,15 +1,19 @@
 package com.backend.services;
 
+import com.backend.ClinicaOdontologicaApplication;
+import com.backend.config.TestDatabaseConfig;
 import com.backend.entity.Odontologo;
 import com.backend.repository.impl.OdontologoDaoH2;
 import com.backend.repository.impl.OdontologoDaoMemory;
 import com.backend.service.impl.OdontologoService;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-
+@ContextConfiguration(classes = {TestDatabaseConfig.class})
 public class OdontologoServiceTest {
     private OdontologoService odontologoService;
 

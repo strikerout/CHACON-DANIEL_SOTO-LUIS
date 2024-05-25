@@ -17,7 +17,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
 
     @Override
     public Paciente guardar(Paciente paciente) {
-        final String insert = "INSERT INTO PACIENTES (DNI, NOMBRE, APELLIDO,DOMICILIO, FECHA_ALTA) VALUE(?, ?, ?, ?, ?)";
+        final String insert = "INSERT INTO PACIENTES(DNI, NOMBRE, APELLIDO,DOMICILIO, FECHA_ALTA) VALUES (?, ?, ?, ?, ?)";
         Connection connection = null;
         Paciente pacienteGuardado = null;
 
@@ -78,7 +78,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
 
             ResultSet resultset = preparedStatement.executeQuery();
             while (resultset.next()){
-                Paciente paciente = new Paciente(resultset.getLong("id"),resultset.getLong("dni"), resultset.getString("nombre"), resultset.getString("apellido"), resultset.getString("domicilio"), resultset.getDate("fecha-alta").toLocalDate());
+                Paciente paciente = new Paciente(resultset.getLong("id"),resultset.getLong("dni"), resultset.getString("nombre"), resultset.getString("apellido"), resultset.getString("domicilio"), resultset.getDate("fecha_alta").toLocalDate());
 
                 listaPacientes.add(paciente);
             }
