@@ -1,7 +1,9 @@
 package com.backend.repository.impl;
 
 import com.backend.entity.Domicilio;
+import com.backend.entity.Odontologo;
 import com.backend.entity.Paciente;
+import com.backend.entity.Turno;
 import com.backend.repository.IDao;
 import com.backend.repository.dbconnection.H2Connection;
 import org.apache.log4j.Logger;
@@ -10,16 +12,15 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class PacienteDaoH2 implements IDao<Paciente> {
-    private static final Logger LOGGER = Logger.getLogger(PacienteDaoH2.class);
-    private DomicilioDaoH2 domicilioDaoH2 = new DomicilioDaoH2();
-
+public class TurnoDaoH2 implements IDao<Turno> {
+    private static final Logger LOGGER = Logger.getLogger(TurnoDaoH2.class);
+    private OdontologoDaoH2 odontologoDaoH2 = new OdontologoDaoH2();
+    private PacienteDaoH2 pacienteDaoH2 = new PacienteDaoH2();
     @Override
-    public Paciente buscar(Long id) {
-        final String query = "SELECT * FROM PACIENTES WHERE ID = ?";
+    public Turno buscar(Long id) {
+        final String query = "SELECT * FROM TURNOS WHERE ID = ?";
         Connection connection = null;
-        Paciente paciente = null;
+        Turno turno = null;
 
         try {
             connection = H2Connection.getConnection();
@@ -28,10 +29,13 @@ public class PacienteDaoH2 implements IDao<Paciente> {
 
             ResultSet resultset = preparedStatement.executeQuery();
             while (resultset.next()) {
-                Domicilio domicilio = domicilioDaoH2.buscar(resultset.getLong("domicilio"));
-                paciente = new Paciente(resultset.getLong("id"), resultset.getLong("dni"), resultset.getString("nombre"), resultset.getString("apellido"), domicilio, resultset.getDate("fecha_alta").toLocalDate());
+                Odontologo odontologo = odontologoDaoH2.buscar(resultset.getLong("odontologo"));
+                Paciente paciente = pacienteDaoH2.buscar(resultset.getLong("paciente"));
+
+                turno = new Turno(resultset.getLong("id"), resultset.getTimestamp("fecha_y_hora").toLocalDateTime(), odontologo, paciente);
+
             }
-            LOGGER.info("Paciente obtenido exitosamente: " + paciente.toString());
+            LOGGER.info("Turno obtenido exitosamente: " + turno.toString());
         } catch (Exception exception) {
             LOGGER.error(exception.getMessage());
             exception.printStackTrace();
@@ -43,44 +47,47 @@ public class PacienteDaoH2 implements IDao<Paciente> {
                 ex.printStackTrace();
             }
         }
-        return paciente;
+        return turno;
     }
 
     @Override
-    public Paciente guardar(Paciente paciente) {
-        final String insert = "INSERT INTO PACIENTES(DNI, NOMBRE, APELLIDO, DOMICILIO, FECHA_ALTA) VALUES (?, ?, ?, ?, ?)";
+    public Turno guardar(Turno turno) {
+        final String insert = "INSERT INTO TURNOS (FECHA_Y_HORA, ODONTOLOGO, PACIENTE) VALUES (?, ?, ?)";
         Connection connection = null;
-        Paciente pacienteGuardado = null;
+        Turno turnoGuardado = null;
 
         try {
             connection = H2Connection.getConnection();
             connection.setAutoCommit(false);
 
             PreparedStatement preparedStatement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setLong(1, paciente.getDni());
-            preparedStatement.setString(2, paciente.getNombre());
-            preparedStatement.setString(3, paciente.getApellido());
-            preparedStatement.setLong(4, paciente.getDomicilio().getId());
-            preparedStatement.setDate(5, Date.valueOf(paciente.getFechaAlta()));
+            preparedStatement.setTimestamp(1, Timestamp.valueOf(turno.getFechaYHora()));
+            preparedStatement.setLong(2, turno.getOdontologo().getId());
+            preparedStatement.setLong(3, turno.getPaciente().getId());
+
 
             preparedStatement.execute();
 
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
 
-            Domicilio domicilio = domicilioDaoH2.buscar(paciente.getDomicilio().getId());
+            Odontologo odontologo = odontologoDaoH2.buscar(turno.getOdontologo().getId());
 
-            if (domicilio == null) {
-                throw new Exception("Domicilio no encontrado");
+            if (odontologo == null) {
+                throw new Exception("Odontologo no encontrado");
             }
 
-            //TODO: PREGUNTAR A LA PROFE SI REQUERIMOS QUE EXISTA EL DOMICILIO ANTES DEL PACIENTE; O SI CREAMOS EL DOMICILIO EN BASE AL QUE SE LE PROVEE AL PACIENTE
+            Paciente paciente = pacienteDaoH2.buscar(turno.getPaciente().getId());
+
+            if (paciente == null) {
+                throw new Exception("Paciente no encontrado");
+            }
 
             while (resultSet.next()) {
-                pacienteGuardado = new Paciente(resultSet.getLong("id"), paciente.getDni(), paciente.getNombre(), paciente.getApellido(), domicilio, paciente.getFechaAlta());
+                turnoGuardado = new Turno(resultSet.getLong("id"), turno.getFechaYHora(), odontologo, paciente);
             }
 
             connection.commit();
-            LOGGER.info("Guardado con éxito: " + pacienteGuardado.toString());
+            LOGGER.info("Guardado con éxito: " + turnoGuardado.toString());
 
         } catch (Exception exception) {
             LOGGER.error(exception.getMessage());
@@ -102,13 +109,13 @@ public class PacienteDaoH2 implements IDao<Paciente> {
                 LOGGER.error("No se ha podido cerrar la conexión" + exception.getMessage());
             }
         }
-        return pacienteGuardado;
+        return turnoGuardado;
     }
 
     @Override
-    public List<Paciente> listarTodos() {
-        final String query = "SELECT * FROM PACIENTES";
-        List<Paciente> listaPacientes = new ArrayList<>();
+    public List<Turno> listarTodos() {
+        final String query = "SELECT * FROM TURNOS";
+        List<Turno> listaTurnos = new ArrayList<>();
         Connection connection = null;
 
         try {
@@ -117,13 +124,14 @@ public class PacienteDaoH2 implements IDao<Paciente> {
 
             ResultSet resultset = preparedStatement.executeQuery();
             while (resultset.next()) {
-                Domicilio domicilio = domicilioDaoH2.buscar(resultset.getLong("domicilio"));
+                Odontologo odontologo = odontologoDaoH2.buscar(resultset.getLong("odontologo"));
+                Paciente paciente = pacienteDaoH2.buscar(resultset.getLong("paciente"));
 
-                Paciente paciente = new Paciente(resultset.getLong("id"), resultset.getLong("dni"), resultset.getString("nombre"), resultset.getString("apellido"), domicilio, resultset.getDate("fecha_alta").toLocalDate());
+                Turno turno = new Turno(resultset.getLong("id"), resultset.getTimestamp("fecha_y_hora").toLocalDateTime(), odontologo, paciente);
 
-                listaPacientes.add(paciente);
+                listaTurnos.add(turno);
             }
-            LOGGER.info("Pacientes obtenidos exitosamente: " + listaPacientes);
+            LOGGER.info("Turnos obtenidos exitosamente: " + listaTurnos);
         } catch (Exception exception) {
             LOGGER.error(exception.getMessage());
             exception.printStackTrace();
@@ -135,6 +143,6 @@ public class PacienteDaoH2 implements IDao<Paciente> {
                 ex.printStackTrace();
             }
         }
-        return listaPacientes;
+        return listaTurnos;
     }
 }

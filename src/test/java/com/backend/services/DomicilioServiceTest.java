@@ -16,27 +16,23 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 @ContextConfiguration(classes = {TestDatabaseConfig.class})
-public class PacienteServiceTest {
-    private PacienteService pacienteService = new PacienteService();
+public class DomicilioServiceTest {
     private DomicilioService domicilioService = new DomicilioService();
 
     @Test
-    void deberiaGuardarUnPacienteYRetornarElId() {
+    void deberiaGuardarUnDomicilioYRetornarElId() {
         Domicilio domicilioAGuardar = new Domicilio("Calle", 1, "Malvin", "Montevideo");
-        Domicilio domicilioGuardado = domicilioService.guardarDomicilio(domicilioAGuardar);
-
-        Paciente pacienteAGuardar = new Paciente(1234534L, "Maria", "Bonita", domicilioGuardado, LocalDate.parse("2024-05-02"));
-        Paciente pacienteGuardado = pacienteService.guardarPaciente(pacienteAGuardar);
-        assertNotNull(pacienteGuardado.getId());
+        
+        assertNotNull(domicilioService.guardarDomicilio(domicilioAGuardar).getId());
     }
 
     @Test
-    void deberiaRetornarUnaListaNoVacia() {
-        assertFalse(pacienteService.listarTodosLosPacientes().isEmpty());
+    void deberiaRetornarUnaListaNoVaciaDeDomicilios() {
+        assertFalse(domicilioService.listarTodosLosDomicilios().isEmpty());
     }
 
     @Test
-    void deberiaBuscarYEncontrarPacienteConElId1() {
-        assertNotNull(pacienteService.buscarPaciente(1L));
+    void deberiaBuscarYEncontrarDomicilioConElId1() {
+        assertNotNull(domicilioService.buscarDomicilio(1L));
     }
 }

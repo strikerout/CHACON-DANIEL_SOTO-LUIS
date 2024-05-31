@@ -78,3 +78,155 @@ SELECT * FROM PACIENTES [42104-224]
 2024-05-24 23:51:20 INFO  OdontologoDaoH2:39 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
 2024-05-24 23:51:20 INFO  OdontologoDaoH2:81 - Odontólogos obtenidos exitosamente: [Odontólogo - Id: 1, Número Matrícula: 123456, Nombre: Luis, Apellido: Soto, Odontólogo - Id: 2, Número Matrícula: 654321, Nombre: Daniel, Apellido: Chacon, Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez]
 2024-05-24 23:51:20 INFO  OdontologoDaoMemory:38 - Odontólogos obtenidos exitosamente: [Odontólogo - Id: 1, Número Matrícula: 123654, Nombre: Pedro, Apellido: Estocolmo, Odontólogo - Id: 2, Número Matrícula: 124654, Nombre: Maria, Apellido: Barcelona, Odontólogo - Id: 3, Número Matrícula: 125654, Nombre: Fernanda, Apellido: Paris, Odontólogo - Id: 4, Número Matrícula: 126654, Nombre: Diego, Apellido: Monterrey]
+2024-05-30 21:46:46 ERROR DomicilioDaoH2:33 - Tabla "DOMICILIOS" no encontrada
+Table "DOMICILIOS" not found; SQL statement:
+SELECT * FROM DOMICILIOS WHERE ID = ? [42102-224]
+2024-05-30 21:46:46 ERROR PacienteDaoH2:87 - Domicilio no encontrado
+2024-05-30 21:46:46 ERROR PacienteDaoH2:92 - Ha ocurrido un problema, deshaciendo cambios. Domicilio no encontrado
+2024-05-30 21:47:23 ERROR DomicilioDaoH2:33 - Tabla "DOMICILIOS" no encontrada
+Table "DOMICILIOS" not found; SQL statement:
+SELECT * FROM DOMICILIOS WHERE ID = ? [42102-224]
+2024-05-30 21:47:23 ERROR PacienteDaoH2:87 - Domicilio no encontrado
+2024-05-30 21:47:23 ERROR PacienteDaoH2:92 - Ha ocurrido un problema, deshaciendo cambios. Domicilio no encontrado
+2024-05-30 21:48:45 ERROR DomicilioDaoH2:33 - Tabla "DOMICILIOS" no encontrada
+Table "DOMICILIOS" not found; SQL statement:
+SELECT * FROM DOMICILIOS WHERE ID = ? [42102-224]
+2024-05-30 21:48:45 ERROR PacienteDaoH2:87 - Domicilio no encontrado
+2024-05-30 21:48:45 ERROR PacienteDaoH2:92 - Ha ocurrido un problema, deshaciendo cambios. Domicilio no encontrado
+2024-05-30 21:49:28 ERROR DomicilioDaoH2:33 - Cannot invoke "com.backend.entity.Domicilio.toString()" because "domicilio" is null
+2024-05-30 21:49:28 ERROR PacienteDaoH2:87 - Domicilio no encontrado
+2024-05-30 21:49:28 ERROR PacienteDaoH2:92 - Ha ocurrido un problema, deshaciendo cambios. Domicilio no encontrado
+2024-05-30 21:59:08 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 21:59:08 ERROR DomicilioDaoH2:32 - Cannot invoke "com.backend.entity.Domicilio.toString()" because "domicilio" is null
+2024-05-30 21:59:08 ERROR PacienteDaoH2:86 - Domicilio no encontrado
+2024-05-30 21:59:08 ERROR PacienteDaoH2:91 - Ha ocurrido un problema, deshaciendo cambios. Domicilio no encontrado
+2024-05-30 22:01:21 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:01:59 ERROR DomicilioDaoH2:32 - Cannot invoke "com.backend.entity.Domicilio.toString()" because "domicilio" is null
+2024-05-30 22:02:55 ERROR PacienteDaoH2:86 - Domicilio no encontrado
+2024-05-30 22:02:55 ERROR PacienteDaoH2:91 - Ha ocurrido un problema, deshaciendo cambios. Domicilio no encontrado
+2024-05-30 22:03:13 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:04:20 ERROR DomicilioDaoH2:32 - Cannot invoke "com.backend.entity.Domicilio.toString()" because "domicilio" is null
+2024-05-30 22:04:20 ERROR PacienteDaoH2:86 - Domicilio no encontrado
+2024-05-30 22:04:20 ERROR PacienteDaoH2:91 - Ha ocurrido un problema, deshaciendo cambios. Domicilio no encontrado
+2024-05-30 22:05:31 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:05:31 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:05:31 INFO  PacienteDaoH2:83 - Guardado con éxito: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 22:05:52 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=1, calle='Estanislao Lopez', numero=4514, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:05:52 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=1, calle='Estanislao Lopez', numero=4514, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:05:52 INFO  PacienteDaoH2:126 - Pacientes obtenidos exitosamente: [Paciente - ID: 1,DNI : 98765432,Nombre : Ana,Apellido : Perez,Domicilio : Domicilio{id=1, calle='Estanislao Lopez', numero=4514, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-24, Paciente - ID: 2,DNI : 87654321,Nombre : Juan,Apellido : Gomez,Domicilio : Domicilio{id=1, calle='Estanislao Lopez', numero=4514, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-23]
+2024-05-30 22:41:11 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:41:19 INFO  DomicilioDaoH2:112 - Domicilio obtenidos exitosamente: [Domicilio{id=1, calle='Estanislao Lopez', numero=4514, localidad='Malvin', provincia='Montevideo'}]
+2024-05-30 22:46:04 INFO  OdontologoDaoH2:44 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 22:46:04 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:46:04 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:46:04 INFO  PacienteDaoH2:83 - Guardado con éxito: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 22:46:04 ERROR TurnoDaoH2:93 - Tabla "TURNOS" no encontrada
+Table "TURNOS" not found; SQL statement:
+INSERT INTO TURNOS(FECHA_Y_HORA, ODONTOLOGO, PACIENTE) VALUES (?, ?, ?) [42102-224]
+2024-05-30 22:46:04 ERROR TurnoDaoH2:98 - Ha ocurrido un problema, deshaciendo cambios. Tabla "TURNOS" no encontrada
+Table "TURNOS" not found; SQL statement:
+INSERT INTO TURNOS(FECHA_Y_HORA, ODONTOLOGO, PACIENTE) VALUES (?, ?, ?) [42102-224]
+2024-05-30 22:47:26 INFO  OdontologoDaoH2:44 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 22:47:26 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:47:26 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:47:26 INFO  PacienteDaoH2:83 - Guardado con éxito: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 22:47:26 ERROR TurnoDaoH2:93 - Tabla "TURNOS" no encontrada
+Table "TURNOS" not found; SQL statement:
+INSERT INTO TURNOS(FECHA_Y_HORA, ODONTOLOGO, PACIENTE) VALUES (?, ?, ?) [42102-224]
+2024-05-30 22:47:26 ERROR TurnoDaoH2:98 - Ha ocurrido un problema, deshaciendo cambios. Tabla "TURNOS" no encontrada
+Table "TURNOS" not found; SQL statement:
+INSERT INTO TURNOS(FECHA_Y_HORA, ODONTOLOGO, PACIENTE) VALUES (?, ?, ?) [42102-224]
+2024-05-30 22:47:46 INFO  DomicilioDaoH2:112 - Domicilio obtenidos exitosamente: [Domicilio{id=1, calle='Estanislao Lopez', numero=4514, localidad='Malvin', provincia='Montevideo'}]
+2024-05-30 22:48:40 INFO  OdontologoDaoH2:44 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 22:48:40 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:48:40 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:48:40 INFO  PacienteDaoH2:83 - Guardado con éxito: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 22:51:21 ERROR TurnoDaoH2:93 - Tabla "TURNOS" no encontrada
+Table "TURNOS" not found; SQL statement:
+INSERT INTO TURNOS (FECHA_Y_HORA, ODONTOLOGO, PACIENTE) VALUES (?, ?, ?) [42102-224]
+2024-05-30 22:51:21 ERROR TurnoDaoH2:98 - Ha ocurrido un problema, deshaciendo cambios. Tabla "TURNOS" no encontrada
+Table "TURNOS" not found; SQL statement:
+INSERT INTO TURNOS (FECHA_Y_HORA, ODONTOLOGO, PACIENTE) VALUES (?, ?, ?) [42102-224]
+2024-05-30 22:51:30 INFO  OdontologoDaoH2:44 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 22:51:30 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:51:31 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:51:31 INFO  PacienteDaoH2:83 - Guardado con éxito: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 22:51:31 ERROR TurnoDaoH2:93 - Tabla "TURNOS" no encontrada
+Table "TURNOS" not found; SQL statement:
+INSERT INTO TURNOS (FECHA_Y_HORA, ODONTOLOGO, PACIENTE) VALUES (?, ?, ?) [42102-224]
+2024-05-30 22:51:31 ERROR TurnoDaoH2:98 - Ha ocurrido un problema, deshaciendo cambios. Tabla "TURNOS" no encontrada
+Table "TURNOS" not found; SQL statement:
+INSERT INTO TURNOS (FECHA_Y_HORA, ODONTOLOGO, PACIENTE) VALUES (?, ?, ?) [42102-224]
+2024-05-30 22:57:35 INFO  OdontologoDaoH2:44 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 22:57:35 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:57:35 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 22:57:35 INFO  PacienteDaoH2:83 - Guardado con éxito: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 22:57:35 ERROR TurnoDaoH2:93 - Tabla "TURNOS" no encontrada
+Table "TURNOS" not found; SQL statement:
+INSERT INTO TURNOS (FECHA_Y_HORA, ODONTOLOGO, PACIENTE) VALUES (?, ?, ?) [42102-224]
+2024-05-30 22:57:35 ERROR TurnoDaoH2:98 - Ha ocurrido un problema, deshaciendo cambios. Tabla "TURNOS" no encontrada
+Table "TURNOS" not found; SQL statement:
+INSERT INTO TURNOS (FECHA_Y_HORA, ODONTOLOGO, PACIENTE) VALUES (?, ?, ?) [42102-224]
+2024-05-30 22:58:53 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-05-30 22:58:53 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-05-30 22:59:35 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-05-30 22:59:35 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-05-30 23:00:50 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-05-30 23:00:50 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-05-30 23:01:47 INFO  OdontologoDaoH2:44 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 23:01:48 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:01:48 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:01:48 INFO  PacienteDaoH2:83 - Guardado con éxito: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 23:01:48 ERROR TurnoDaoH2:93 - Odontologo no encontrado
+2024-05-30 23:01:48 ERROR TurnoDaoH2:98 - Ha ocurrido un problema, deshaciendo cambios. Odontologo no encontrado
+2024-05-30 23:02:22 INFO  OdontologoDaoH2:44 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 23:02:23 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:02:23 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:02:23 INFO  PacienteDaoH2:83 - Guardado con éxito: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 23:03:16 ERROR TurnoDaoH2:93 - Odontologo no encontrado
+2024-05-30 23:03:16 ERROR TurnoDaoH2:98 - Ha ocurrido un problema, deshaciendo cambios. Odontologo no encontrado
+2024-05-30 23:06:28 INFO  OdontologoDaoH2:71 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 23:06:28 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:06:28 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:06:28 INFO  PacienteDaoH2:83 - Guardado con éxito: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 23:06:28 INFO  OdontologoDaoH2:32 - Odontologo obtenido exitosamente: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 23:06:28 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:06:28 INFO  PacienteDaoH2:34 - Paciente obtenido exitosamente: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 23:06:28 ERROR TurnoDaoH2:93 - Columna "fecha_y_hora" no encontrada
+Column "fecha_y_hora" not found [42122-224]
+2024-05-30 23:06:28 ERROR TurnoDaoH2:98 - Ha ocurrido un problema, deshaciendo cambios. Columna "fecha_y_hora" no encontrada
+Column "fecha_y_hora" not found [42122-224]
+2024-05-30 23:08:03 INFO  OdontologoDaoH2:71 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 23:08:03 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:08:04 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:08:04 INFO  PacienteDaoH2:83 - Guardado con éxito: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 23:08:53 INFO  OdontologoDaoH2:32 - Odontologo obtenido exitosamente: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 23:08:59 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:08:59 INFO  PacienteDaoH2:34 - Paciente obtenido exitosamente: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 23:09:58 ERROR TurnoDaoH2:93 - Columna "fecha_y_hora" no encontrada
+Column "fecha_y_hora" not found [42122-224]
+2024-05-30 23:09:58 ERROR TurnoDaoH2:98 - Ha ocurrido un problema, deshaciendo cambios. Columna "fecha_y_hora" no encontrada
+Column "fecha_y_hora" not found [42122-224]
+2024-05-30 23:10:56 INFO  OdontologoDaoH2:71 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 23:10:56 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:10:56 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:10:56 INFO  PacienteDaoH2:83 - Guardado con éxito: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 23:10:57 INFO  OdontologoDaoH2:32 - Odontologo obtenido exitosamente: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 23:10:57 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:10:57 INFO  PacienteDaoH2:34 - Paciente obtenido exitosamente: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 23:10:57 INFO  TurnoDaoH2:90 - Guardado con éxito: Turno{id=1, fechaYHora=2024-05-30T23:10:57.025272200, odontologo=Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez, paciente=Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02}
+2024-05-30 23:12:03 INFO  OdontologoDaoH2:32 - Odontologo obtenido exitosamente: Odontólogo - Id: 1, Número Matrícula: 123456, Nombre: Luis, Apellido: Soto
+2024-05-30 23:14:34 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=1, calle='Estanislao Lopez', numero=4514, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:14:34 INFO  PacienteDaoH2:34 - Paciente obtenido exitosamente: Paciente - ID: 1,DNI : 98765432,Nombre : Ana,Apellido : Perez,Domicilio : Domicilio{id=1, calle='Estanislao Lopez', numero=4514, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-24
+2024-05-30 23:14:48 INFO  OdontologoDaoH2:71 - Guardado con éxito: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 23:14:48 INFO  DomicilioDaoH2:70 - Guardado con éxito: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:14:49 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:14:49 INFO  PacienteDaoH2:83 - Guardado con éxito: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 23:14:49 INFO  OdontologoDaoH2:32 - Odontologo obtenido exitosamente: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 23:14:49 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:14:49 INFO  PacienteDaoH2:34 - Paciente obtenido exitosamente: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 23:14:49 INFO  TurnoDaoH2:90 - Guardado con éxito: Turno{id=1, fechaYHora=2024-05-30T23:14:49.316097600, odontologo=Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez, paciente=Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02}
+2024-05-30 23:14:49 INFO  OdontologoDaoH2:32 - Odontologo obtenido exitosamente: Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez
+2024-05-30 23:14:49 INFO  DomicilioDaoH2:30 - Domicilio obtenido exitosamente: Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'}
+2024-05-30 23:14:49 INFO  PacienteDaoH2:34 - Paciente obtenido exitosamente: Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02
+2024-05-30 23:14:49 INFO  TurnoDaoH2:38 - Turno obtenido exitosamente: Turno{id=1, fechaYHora=2024-05-30T23:14:49.316098, odontologo=Odontólogo - Id: 3, Número Matrícula: 1111, Nombre: Juan, Apellido: Perez, paciente=Paciente - ID: 3,DNI : 1234534,Nombre : Maria,Apellido : Bonita,Domicilio : Domicilio{id=2, calle='Calle', numero=1, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-02}

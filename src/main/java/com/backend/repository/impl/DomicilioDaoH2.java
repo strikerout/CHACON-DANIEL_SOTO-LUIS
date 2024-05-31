@@ -1,7 +1,6 @@
 package com.backend.repository.impl;
 
 import com.backend.entity.Domicilio;
-import com.backend.entity.Paciente;
 import com.backend.repository.IDao;
 import com.backend.repository.dbconnection.H2Connection;
 import org.apache.log4j.Logger;
@@ -10,16 +9,14 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class PacienteDaoH2 implements IDao<Paciente> {
-    private static final Logger LOGGER = Logger.getLogger(PacienteDaoH2.class);
-    private DomicilioDaoH2 domicilioDaoH2 = new DomicilioDaoH2();
+public class DomicilioDaoH2 implements IDao<Domicilio> {
+    private static final Logger LOGGER = Logger.getLogger(DomicilioDaoH2.class);
 
     @Override
-    public Paciente buscar(Long id) {
-        final String query = "SELECT * FROM PACIENTES WHERE ID = ?";
+    public Domicilio buscar(Long id) {
+        final String query = "SELECT * FROM DOMICILIOS WHERE ID = ?";
         Connection connection = null;
-        Paciente paciente = null;
+        Domicilio domicilio = null;
 
         try {
             connection = H2Connection.getConnection();
@@ -28,10 +25,9 @@ public class PacienteDaoH2 implements IDao<Paciente> {
 
             ResultSet resultset = preparedStatement.executeQuery();
             while (resultset.next()) {
-                Domicilio domicilio = domicilioDaoH2.buscar(resultset.getLong("domicilio"));
-                paciente = new Paciente(resultset.getLong("id"), resultset.getLong("dni"), resultset.getString("nombre"), resultset.getString("apellido"), domicilio, resultset.getDate("fecha_alta").toLocalDate());
+                domicilio = new Domicilio(resultset.getLong("id"), resultset.getString("calle"), resultset.getInt("numero"), resultset.getString("localidad"), resultset.getString("provincia"));
             }
-            LOGGER.info("Paciente obtenido exitosamente: " + paciente.toString());
+            LOGGER.info("Domicilio obtenido exitosamente: " + domicilio.toString());
         } catch (Exception exception) {
             LOGGER.error(exception.getMessage());
             exception.printStackTrace();
@@ -43,44 +39,35 @@ public class PacienteDaoH2 implements IDao<Paciente> {
                 ex.printStackTrace();
             }
         }
-        return paciente;
+        return domicilio;
     }
 
     @Override
-    public Paciente guardar(Paciente paciente) {
-        final String insert = "INSERT INTO PACIENTES(DNI, NOMBRE, APELLIDO, DOMICILIO, FECHA_ALTA) VALUES (?, ?, ?, ?, ?)";
+    public Domicilio guardar(Domicilio domicilio) {
+        final String insert = "INSERT INTO DOMICILIOS (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES(?, ?, ?, ?)";
         Connection connection = null;
-        Paciente pacienteGuardado = null;
+        Domicilio domicilioGuardado = null;
 
         try {
             connection = H2Connection.getConnection();
             connection.setAutoCommit(false);
 
             PreparedStatement preparedStatement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
-            preparedStatement.setLong(1, paciente.getDni());
-            preparedStatement.setString(2, paciente.getNombre());
-            preparedStatement.setString(3, paciente.getApellido());
-            preparedStatement.setLong(4, paciente.getDomicilio().getId());
-            preparedStatement.setDate(5, Date.valueOf(paciente.getFechaAlta()));
+            preparedStatement.setString(1, domicilio.getCalle());
+            preparedStatement.setInt(2, domicilio.getNumero());
+            preparedStatement.setString(3, domicilio.getLocalidad());
+            preparedStatement.setString(4, domicilio.getProvincia());
 
             preparedStatement.execute();
 
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
 
-            Domicilio domicilio = domicilioDaoH2.buscar(paciente.getDomicilio().getId());
-
-            if (domicilio == null) {
-                throw new Exception("Domicilio no encontrado");
-            }
-
-            //TODO: PREGUNTAR A LA PROFE SI REQUERIMOS QUE EXISTA EL DOMICILIO ANTES DEL PACIENTE; O SI CREAMOS EL DOMICILIO EN BASE AL QUE SE LE PROVEE AL PACIENTE
-
             while (resultSet.next()) {
-                pacienteGuardado = new Paciente(resultSet.getLong("id"), paciente.getDni(), paciente.getNombre(), paciente.getApellido(), domicilio, paciente.getFechaAlta());
+                domicilioGuardado = new Domicilio(resultSet.getLong("id"), domicilio.getCalle(), domicilio.getNumero(), domicilio.getLocalidad(), domicilio.getProvincia());
             }
 
             connection.commit();
-            LOGGER.info("Guardado con éxito: " + pacienteGuardado.toString());
+            LOGGER.info("Guardado con éxito: " + domicilioGuardado.toString());
 
         } catch (Exception exception) {
             LOGGER.error(exception.getMessage());
@@ -102,13 +89,14 @@ public class PacienteDaoH2 implements IDao<Paciente> {
                 LOGGER.error("No se ha podido cerrar la conexión" + exception.getMessage());
             }
         }
-        return pacienteGuardado;
+
+        return domicilioGuardado;
     }
 
     @Override
-    public List<Paciente> listarTodos() {
-        final String query = "SELECT * FROM PACIENTES";
-        List<Paciente> listaPacientes = new ArrayList<>();
+    public List<Domicilio> listarTodos() {
+        final String query = "SELECT * FROM DOMICILIOS";
+        List<Domicilio> listaDomicilio = new ArrayList<>();
         Connection connection = null;
 
         try {
@@ -117,13 +105,11 @@ public class PacienteDaoH2 implements IDao<Paciente> {
 
             ResultSet resultset = preparedStatement.executeQuery();
             while (resultset.next()) {
-                Domicilio domicilio = domicilioDaoH2.buscar(resultset.getLong("domicilio"));
+                Domicilio paciente = new Domicilio(resultset.getLong("id"), resultset.getString("calle"), resultset.getInt("numero"), resultset.getString("localidad"), resultset.getString("provincia"));
 
-                Paciente paciente = new Paciente(resultset.getLong("id"), resultset.getLong("dni"), resultset.getString("nombre"), resultset.getString("apellido"), domicilio, resultset.getDate("fecha_alta").toLocalDate());
-
-                listaPacientes.add(paciente);
+                listaDomicilio.add(paciente);
             }
-            LOGGER.info("Pacientes obtenidos exitosamente: " + listaPacientes);
+            LOGGER.info("Domicilio obtenidos exitosamente: " + listaDomicilio);
         } catch (Exception exception) {
             LOGGER.error(exception.getMessage());
             exception.printStackTrace();
@@ -135,6 +121,6 @@ public class PacienteDaoH2 implements IDao<Paciente> {
                 ex.printStackTrace();
             }
         }
-        return listaPacientes;
+        return listaDomicilio;
     }
 }

@@ -2,16 +2,18 @@ package com.backend.service.impl;
 
 import com.backend.entity.Paciente;
 import com.backend.repository.IDao;
+import com.backend.repository.impl.PacienteDaoH2;
 import com.backend.service.IPacienteService;
 
 import java.util.List;
 
 public class PacienteService implements IPacienteService {
 
-    private IDao<Paciente> pacienteIDao;
+    private IDao<Paciente> pacienteIDao = new PacienteDaoH2();
 
-    public PacienteService(IDao<Paciente> pacienteIDao) {
-        this.pacienteIDao = pacienteIDao;
+    @Override
+    public Paciente buscarPaciente(Long id) {
+        return pacienteIDao.buscar(id);
     }
 
     @Override

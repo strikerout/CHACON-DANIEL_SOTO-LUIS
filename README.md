@@ -7,7 +7,9 @@ El proyecto está siendo actualizado periódicamente para reflejar los avances y
 ## 🚀 Descripción
 
 La Clínica Odontológica es un sistema diseñado para gestionar la información de odontólogos y pacientes.
-Proporciona herramientas para registrar datos de pacientes, programar citas, administrar el personal médico, entre otras funciones relacionadas con la gestión de una clínica dental.
+Proporciona herramientas para registrar datos de pacientes, programar citas, administrar el personal médico, entre otras
+funciones relacionadas con la gestión de una clínica dental.
+
 ## 👨‍💻 Equipo
 
 El proyecto está siendo desarrollado por:
