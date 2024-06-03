@@ -1,8 +1,10 @@
 package com.backend.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class Domicilio {
     private Long id;
     private String calle;

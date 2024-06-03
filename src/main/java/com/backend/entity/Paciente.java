@@ -1,11 +1,13 @@
 package com.backend.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 
 @Data
+@NoArgsConstructor
 public class Paciente {
     private long id;
     private long dni;

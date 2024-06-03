@@ -2,14 +2,10 @@ package com.backend.services;
 
 import com.backend.config.TestDatabaseConfig;
 import com.backend.entity.Domicilio;
-import com.backend.entity.Paciente;
 import com.backend.service.impl.DomicilioService;
-import com.backend.service.impl.PacienteService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-
-import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -22,7 +18,7 @@ public class DomicilioServiceTest {
     @Test
     void deberiaGuardarUnDomicilioYRetornarElId() {
         Domicilio domicilioAGuardar = new Domicilio("Calle", 1, "Malvin", "Montevideo");
-        
+
         assertNotNull(domicilioService.guardarDomicilio(domicilioAGuardar).getId());
     }
 

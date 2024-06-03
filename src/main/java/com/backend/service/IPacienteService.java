@@ -2,12 +2,13 @@ package com.backend.service;
 
 import com.backend.dto.entrada.PacienteDtoEntrada;
 import com.backend.dto.salida.PacienteDtoSalida;
-import com.backend.entity.Paciente;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface IPacienteService {
-    Paciente buscarPaciente(Long id);
+    PacienteDtoSalida buscarPaciente(Long id);
 
     PacienteDtoSalida guardarPaciente(PacienteDtoEntrada pacienteDtoEntrada);
 

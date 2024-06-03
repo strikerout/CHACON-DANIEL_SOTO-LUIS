@@ -5,15 +5,19 @@ import com.backend.entity.Paciente;
 import com.backend.repository.IDao;
 import com.backend.repository.dbconnection.H2Connection;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Component
 public class PacienteDaoH2 implements IDao<Paciente> {
     private static final Logger LOGGER = Logger.getLogger(PacienteDaoH2.class);
-    private DomicilioDaoH2 domicilioDaoH2 = new DomicilioDaoH2();
+
+    @Autowired
+    private DomicilioDaoH2 domicilioDaoH2;
 
     @Override
     public Paciente buscar(Long id) {
@@ -56,18 +60,21 @@ public class PacienteDaoH2 implements IDao<Paciente> {
             connection = H2Connection.getConnection();
             connection.setAutoCommit(false);
 
+            domicilioDaoH2 = new DomicilioDaoH2();
+            Domicilio domicilioRegistrado = domicilioDaoH2.guardar(paciente.getDomicilio());
+
             PreparedStatement preparedStatement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setLong(1, paciente.getDni());
             preparedStatement.setString(2, paciente.getNombre());
             preparedStatement.setString(3, paciente.getApellido());
-            preparedStatement.setLong(4, paciente.getDomicilio().getId());
+            preparedStatement.setLong(4, domicilioRegistrado.getId());
             preparedStatement.setDate(5, Date.valueOf(paciente.getFechaAlta()));
 
             preparedStatement.execute();
 
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
 
-            Domicilio domicilio = domicilioDaoH2.buscar(paciente.getDomicilio().getId());
+            Domicilio domicilio = domicilioDaoH2.buscar(domicilioRegistrado.getId());
 
             if (domicilio == null) {
                 throw new Exception("Domicilio no encontrado");

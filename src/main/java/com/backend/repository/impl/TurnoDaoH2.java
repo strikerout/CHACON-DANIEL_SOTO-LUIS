@@ -1,6 +1,5 @@
 package com.backend.repository.impl;
 
-import com.backend.entity.Domicilio;
 import com.backend.entity.Odontologo;
 import com.backend.entity.Paciente;
 import com.backend.entity.Turno;
@@ -16,6 +15,7 @@ public class TurnoDaoH2 implements IDao<Turno> {
     private static final Logger LOGGER = Logger.getLogger(TurnoDaoH2.class);
     private OdontologoDaoH2 odontologoDaoH2 = new OdontologoDaoH2();
     private PacienteDaoH2 pacienteDaoH2 = new PacienteDaoH2();
+
     @Override
     public Turno buscar(Long id) {
         final String query = "SELECT * FROM TURNOS WHERE ID = ?";

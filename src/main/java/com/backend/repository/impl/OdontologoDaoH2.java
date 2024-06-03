@@ -1,8 +1,6 @@
 package com.backend.repository.impl;
 
-import com.backend.entity.Domicilio;
 import com.backend.entity.Odontologo;
-import com.backend.entity.Paciente;
 import com.backend.repository.IDao;
 import com.backend.repository.dbconnection.H2Connection;
 import org.apache.log4j.Logger;
