@@ -1,13 +1,15 @@
 package com.backend.service;
 
+import com.backend.dto.entrada.TurnoDtoEntrada;
+import com.backend.dto.salida.TurnoDtoSalida;
 import com.backend.entity.Turno;
 
 import java.util.List;
 
 public interface ITurnosService {
-    Turno buscarTurno(Long id);
+    TurnoDtoSalida buscarTurno(Long id);
 
-    Turno guardarTurno(Turno turno);
+    TurnoDtoSalida guardarTurno(TurnoDtoEntrada turno);
 
-    List<Turno> listarTodosLosTurnos();
+    List<TurnoDtoSalida> listarTodosLosTurnos();
 }

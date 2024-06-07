@@ -22,7 +22,7 @@ public class TurnoServiceTest {
     private OdontologoService odontologoService = new OdontologoService();
     /*  private PacienteService pacienteService = new PacienteService(modelMapper);*/
 
-    private TurnosService turnoService = new TurnosService();
+    private TurnosService turnoService;
 
     @Test
     void deberiaGuardarUnTurnoYRetornarElId() {

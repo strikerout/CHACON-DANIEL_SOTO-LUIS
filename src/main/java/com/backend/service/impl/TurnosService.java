@@ -1,5 +1,6 @@
 package com.backend.service.impl;
 
+import com.backend.dto.entrada.TurnoDtoEntrada;
 import com.backend.dto.salida.DomicilioDtoSalida;
 import com.backend.dto.salida.PacienteDtoSalida;
 import com.backend.dto.salida.TurnoDtoSalida;
@@ -16,9 +17,14 @@ public class TurnosService implements ITurnosService {
 
     private static final Logger LOGGER = Logger.getLogger(PacienteService.class);
     private final ModelMapper modelMapper;
-    private final IDao<Turno> turnoIDao = new TurnoDaoH2();
+    private final IDao<Turno> turnoIDao;
 
-    @Override                                                                
+    public TurnosService(IDao<Turno> turnoIDao, ModelMapper modelMapper ) {
+        this.modelMapper = modelMapper;
+        this.turnoIDao = turnoIDao;
+    }
+
+    @Override
     public TurnoDtoSalida buscarTurno(Long id) {
         Turno turno = turnoIDao.buscar(id);
         if (turno == null){
@@ -31,12 +37,26 @@ public class TurnosService implements ITurnosService {
     }
 
     @Override
-    public Turno guardarTurno(Turno turno) {
-        return turnoIDao.guardar(turno);
+    public TurnoDtoSalida guardarTurno(TurnoDtoEntrada turno) {
+        Turno turnoAGuardar =  modelMapper.map(turno, Turno.class);
+        Turno turnoGuardado = turnoIDao.guardar(turnoAGuardar);
+        TurnoDtoSalida turnoDtoSalida = modelMapper.map(turnoGuardado, TurnoDtoSalida.class);
+        return turnoDtoSalida;
     }
 
     @Override
-    public List<Turno> listarTodosLosTurnos() {
-        return turnoIDao.listarTodos();
+    public List<TurnoDtoSalida> listarTodosLosTurnos() {
+        List<TurnoDtoSalida> turnos = turnoIDao.listarTodos()
+                .stream()
+                .map(turno -> {
+                    TurnoDtoSalida turnoDtoSalida = modelMapper.map(turno, TurnoDtoSalida.class);
+
+                    return turnoDtoSalida;
+                })
+                .toList();
+
+        LOGGER.info("Listado de todos los pacientes: {}" + turnos);
+
+        return turnos;
     }
 }
