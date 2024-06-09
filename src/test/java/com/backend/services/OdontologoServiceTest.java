@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @SpringBootTest
 @ContextConfiguration(classes = {TestDatabaseConfig.class})
 public class OdontologoServiceTest {
-    private OdontologoService odontologoService = new OdontologoService();
+    private OdontologoService odontologoService = new OdontologoService;
 
     @Test
     void deberiaGuardarUnOdontologoYRetornarElId() {
