@@ -1,11 +1,8 @@
 package com.backend.service.impl;
 
 import com.backend.dto.entrada.TurnoDtoEntrada;
-import com.backend.dto.salida.DomicilioDtoSalida;
-import com.backend.dto.salida.PacienteDtoSalida;
 import com.backend.dto.salida.TurnoDtoSalida;
 import com.backend.entity.Turno;
-import com.backend.repository.IDao;
 import com.backend.repository.impl.TurnoDaoH2;
 import com.backend.service.ITurnosService;
 import org.apache.log4j.Logger;

@@ -4,7 +4,6 @@ import com.backend.config.TestDatabaseConfig;
 import com.backend.entity.Domicilio;
 import com.backend.entity.Odontologo;
 import com.backend.entity.Paciente;
-import com.backend.service.impl.DomicilioService;
 import com.backend.service.impl.OdontologoService;
 import com.backend.service.impl.TurnosService;
 import org.junit.jupiter.api.Test;

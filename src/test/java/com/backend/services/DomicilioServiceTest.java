@@ -2,7 +2,6 @@ package com.backend.services;
 
 import com.backend.config.TestDatabaseConfig;
 import com.backend.entity.Domicilio;
-import com.backend.service.impl.DomicilioService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;

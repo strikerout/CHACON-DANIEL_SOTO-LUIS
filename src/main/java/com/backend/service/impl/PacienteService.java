@@ -4,7 +4,6 @@ import com.backend.dto.entrada.PacienteDtoEntrada;
 import com.backend.dto.salida.DomicilioDtoSalida;
 import com.backend.dto.salida.PacienteDtoSalida;
 import com.backend.entity.Paciente;
-import com.backend.repository.IDao;
 import com.backend.repository.PacienteRepository;
 import com.backend.service.IPacienteService;
 import org.apache.log4j.Logger;
@@ -19,7 +18,7 @@ public class PacienteService implements IPacienteService {
 
     private static final Logger LOGGER = Logger.getLogger(PacienteService.class);
     private final ModelMapper modelMapper;
-    private PacienteRepository pacienteRepository;
+    private final PacienteRepository pacienteRepository;
 
     @Autowired
     public PacienteService(PacienteRepository pacienteRepository, ModelMapper modelMapper) {

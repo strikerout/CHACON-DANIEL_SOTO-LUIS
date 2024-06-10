@@ -3,11 +3,11 @@ package com.backend.service.impl;
 import com.backend.dto.entrada.OdontologoDtoEntrada;
 import com.backend.dto.salida.OdontologoDtoSalida;
 import com.backend.entity.Odontologo;
-import com.backend.repository.IDao;
-import com.backend.repository.impl.OdontologoDaoH2;
+import com.backend.repository.OdontologoRepository;
 import com.backend.service.IOdontologoService;
 import org.apache.log4j.Logger;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -15,15 +15,16 @@ public class OdontologoService implements IOdontologoService {
 
     private static final Logger LOGGER = Logger.getLogger(OdontologoService.class);
     private final ModelMapper modelMapper;
-    private final IDao<Odontologo> odontologoIDao = new OdontologoDaoH2();
+    private final OdontologoRepository odontologoRepository;
 
-    public OdontologoService(ModelMapper modelMapper) {
+    public OdontologoService(ModelMapper modelMapper, OdontologoRepository odontologoRepository) {
         this.modelMapper = modelMapper;
+        this.odontologoRepository = odontologoRepository;
     }
 
     @Override
     public OdontologoDtoSalida buscarOdontologo(Long id) {
-        Odontologo odontologo = odontologoIDao.buscar(id);
+        Odontologo odontologo = odontologoRepository.findById(id).orElse(null);
         if( odontologo == null){
             return null;
         }
@@ -41,7 +42,7 @@ public class OdontologoService implements IOdontologoService {
 
     @Override
     public List<OdontologoDtoSalida> listarTodosLosOdontologos() {
-        List<OdontologoDtoSalida> odontologos = odontologoIDao.listarTodos()
+        List<OdontologoDtoSalida> odontologos = odontologoRepository.findAll()
                 .stream()
                 .map(odontologo -> {
                     OdontologoDtoSalida odontologoDtoSalida = modelMapper.map(odontologo, OdontologoDtoSalida.class);
