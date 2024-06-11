@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHodonlogia</title>
+    <meta name="description" content="pagina web odontologica">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=PT+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- PreLoad -->
+    <link rel="preload" href="/css/normalize.css" as="style">
+    <link rel="stylesheet" href="/css/normalize.css">
+
+    <link rel="preload" href="/css/style.css" as="style">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="index.html">
+                    <h1 class="logo__nombre no-margin centrar-texto">DH<span class="logo__bold">Odontologia</span></h1>
+                </a>
+                <nav class="navegacion">
+                    <a href="index.html" class="navegacion__enlace">Inicio</a>
+                    <a href="pacientes.html" class="navegacion__enlace">Pacientes</a>
+                    <a href="odontologos.html" class="navegacion__enlace">Odontologos</a>
+                    <a href="turnos.html" class="navegacion__enlace">Turnos</a>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="contenedor contenido-principal">
+        <section class="formulario">
+            <form action="">
+                <h1>Registro Paciente</h1>
+                <div class="campo">
+                    <label class="campo__label" for="dni">DNI :</label>
+                    <input type="number" name="nombre" id="">
+                </div>
+                <div class="campo">
+                    <label for="nombre" class="campo__label">Nombre :</label>
+                    <input class="campo__fiel" type="text" name="nombre" id="" >
+                </div>
+                <div class="campo">
+                    <label for="apellido" class="campo__label">Apellido :</label>
+                    <input type="text" name="nombre" id="">
+                </div>
+                
+                <h4>Datos de domicilio</h4>
+
+                <div class="campo">
+                    <label for="" class="campo__label">Calle</label>
+                    <input type="text" name="calle" id="">
+                </div>
+                <div class="campo">
+                    <label for="" class="campo__label">Numero</label>
+                    <input type="number" name="numero" id="">
+                </div>
+                <div class="campo">
+                    <label for="" class="campo__label">Localidad</label>
+                    <input type="text" name="localidad" id="">
+                </div>
+                <div class="campo">
+                    <label for="" class="campo__label">Provincia</label>
+                    <input type="text" name="provincia" id="">
+                </div>
+
+                <div class="campo">
+                    <input type="submit" value="Registrar" class="boton boton--primario">
+                </div>
+            </form>
+
+        </section>
+
+
+    </div>
+    <footer class="footer">
+        <div class="contenedor">
+            <div class="barra">
+                <a class="logo" href="index.html">
+                    <h1 class="logo__nombre no-margin centrar-texto">DH<span class="logo__bold">Odontologia</span></h1>
+                </a>
+                <nav class="navegacion">
+                    <a href="nosotros.html" class="navegacion__enlace">Nosotros</a>
+                    <a href="pacientes.html" class="navegacion__enlace">Registro</a>
+                    <a href="odontologos.html" class="navegacion__enlace">Odontologos</a>
+                    <a href="turno.html" class="navegacion__enlace">Turnos</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
