@@ -36,7 +36,13 @@ public class PacienteController {
         return pacienteService.buscarPaciente(id);
     }
 
+    @PutMapping("/{id}")
+    public PacienteDtoSalida actualizarPaciente(@PathVariable Long id, @RequestBody PacienteDtoEntrada pacienteDtoEntrada) {
+        return pacienteService.actualizarPaciente(id, pacienteDtoEntrada);
+    }
 
-
-
+    @DeleteMapping("/{id}")
+    public void eliminarPaciente(@PathVariable Long id) {
+        pacienteService.eliminarPaciente(id);
+    }
 }

@@ -38,7 +38,13 @@ public class TurnoController {
         return turnoService.buscarTurno(id);
     }
 
+    @PutMapping("/{id}")
+    public TurnoDtoSalida actualizarTurno(@PathVariable Long id, @RequestBody TurnoDtoEntrada turnoDtoEntrada) {
+        return turnoService.actualizarTurno(id, turnoDtoEntrada);
+    }
 
-
-
+    @DeleteMapping("/{id}")
+    public void eliminarTurno(@PathVariable Long id) {
+        turnoService.eliminarTurno(id);
+    }
 }

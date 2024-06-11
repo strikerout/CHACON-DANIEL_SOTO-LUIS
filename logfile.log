@@ -394,3 +394,46 @@ Database may be already in use: "C:/Users/StrikerOut/clinica.mv.db". Possible so
 2024-06-02 23:18:35 INFO  DomicilioDaoH2:32 - Domicilio obtenido exitosamente: Domicilio{id=4, calle='Calle la esquina', numero=123, localidad='Ciudad', provincia='Provincia'}
 2024-06-02 23:18:35 INFO  PacienteDaoH2:133 - Pacientes obtenidos exitosamente: [Paciente - ID: 1,DNI : 98765432,Nombre : Ana,Apellido : Perez,Domicilio : Domicilio{id=1, calle='Estanislao Lopez', numero=4514, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-24, Paciente - ID: 2,DNI : 87654321,Nombre : Juan,Apellido : Gomez,Domicilio : Domicilio{id=1, calle='Estanislao Lopez', numero=4514, localidad='Malvin', provincia='Montevideo'},Fecha Alta : 2024-05-23, Paciente - ID: 3,DNI : 12345678,Nombre : Juan,Apellido : Pérez,Domicilio : Domicilio{id=2, calle='Calle Principal', numero=123, localidad='Ciudad', provincia='Provincia'},Fecha Alta : 2024-06-02, Paciente - ID: 4,DNI : 323213123,Nombre : Manolito,Apellido : Pérez,Domicilio : Domicilio{id=3, calle='Calle Principal', numero=123, localidad='Ciudad', provincia='Provincia'},Fecha Alta : 2024-06-02, Paciente - ID: 5,DNI : 12312333,Nombre : Mariángela,Apellido : Manos sucias,Domicilio : Domicilio{id=4, calle='Calle la esquina', numero=123, localidad='Ciudad', provincia='Provincia'},Fecha Alta : 2024-06-02]
 2024-06-02 23:18:36 INFO  PacienteService:66 - Listado de todos los pacientes: {}[PacienteDtoSalida(id=1, dni=98765432, nombre=Ana, apellido=Perez, domicilioDtoSalida=DomicilioDtoSalida(id=1, calle=Estanislao Lopez, numero=4514, localidad=Malvin, provincia=Montevideo), fechaAlta=2024-05-24), PacienteDtoSalida(id=2, dni=87654321, nombre=Juan, apellido=Gomez, domicilioDtoSalida=DomicilioDtoSalida(id=1, calle=Estanislao Lopez, numero=4514, localidad=Malvin, provincia=Montevideo), fechaAlta=2024-05-23), PacienteDtoSalida(id=3, dni=12345678, nombre=Juan, apellido=Pérez, domicilioDtoSalida=DomicilioDtoSalida(id=2, calle=Calle Principal, numero=123, localidad=Ciudad, provincia=Provincia), fechaAlta=2024-06-02), PacienteDtoSalida(id=4, dni=323213123, nombre=Manolito, apellido=Pérez, domicilioDtoSalida=DomicilioDtoSalida(id=3, calle=Calle Principal, numero=123, localidad=Ciudad, provincia=Provincia), fechaAlta=2024-06-02), PacienteDtoSalida(id=5, dni=12312333, nombre=Mariángela, apellido=Manos sucias, domicilioDtoSalida=DomicilioDtoSalida(id=4, calle=Calle la esquina, numero=123, localidad=Ciudad, provincia=Provincia), fechaAlta=2024-06-02)]
+2024-06-10 21:13:55 INFO  ClinicaOdontologicaApplication:17 - Application works :)
+2024-06-10 21:13:55 INFO  ClinicaOdontologicaApplication:18 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 21:14:26 INFO  PacienteService:64 - Listado de todos los pacientes: {}[]
+2024-06-10 21:14:38 INFO  PacienteService:64 - Listado de todos los pacientes: {}[PacienteDtoSalida(id=1, dni=12312333, nombre=Mariángela, apellido=Manos sucias, domicilioDtoSalida=null, fechaAlta=2024-06-02)]
+2024-06-10 21:16:33 INFO  ClinicaOdontologicaApplication:17 - Application works :)
+2024-06-10 21:16:33 INFO  ClinicaOdontologicaApplication:18 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 21:16:45 INFO  PacienteService:64 - Listado de todos los pacientes: {}[PacienteDtoSalida(id=1, dni=12312333, nombre=Mariángela, apellido=Manos sucias, domicilioDtoSalida=DomicilioDtoSalida(id=1, calle=Calle la esquina, numero=123, localidad=Ciudad, provincia=Provincia), fechaAlta=2024-06-02)]
+2024-06-10 21:43:06 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-10 21:43:06 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 21:45:24 INFO  PacienteService:64 - Listado de todos los pacientes: {}[PacienteDtoSalida(id=1, dni=12312333, nombre=Mariángela, apellido=Manos sucias, domicilioDtoSalida=DomicilioDtoSalida(id=1, calle=Calle la esquina, numero=123, localidad=Ciudad, provincia=Provincia), fechaAlta=2024-06-02), PacienteDtoSalida(id=2, dni=12312333, nombre=aaaaa, apellido=Manos sucias, domicilioDtoSalida=DomicilioDtoSalida(id=2, calle=Calle la esquina, numero=123, localidad=Ciudad, provincia=Provincia), fechaAlta=2024-06-02)]
+2024-06-10 21:45:51 INFO  PacienteService:64 - Listado de todos los pacientes: {}[PacienteDtoSalida(id=2, dni=12312333, nombre=aaaaa, apellido=Manos sucias, domicilioDtoSalida=DomicilioDtoSalida(id=2, calle=Calle la esquina, numero=123, localidad=Ciudad, provincia=Provincia), fechaAlta=2024-06-02)]
+2024-06-10 21:51:08 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-10 21:51:08 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 21:52:05 INFO  OdontologoService:51 - Listado de todos los odontólogos: [OdontologoDtoSalida(id=1, numMatricula=12345, nombre=Juan, apellido=Perez)]
+2024-06-10 21:53:08 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-10 21:53:08 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 21:53:42 INFO  OdontologoService:51 - Listado de todos los odontólogos: [OdontologoDtoSalida(id=1, numMatricula=12345, nombre=Juan, apellido=Perez), OdontologoDtoSalida(id=2, numMatricula=123456, nombre=Juan a, apellido=Perez)]
+2024-06-10 21:55:46 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-10 21:55:46 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 21:55:59 INFO  OdontologoService:51 - Listado de todos los odontólogos: [OdontologoDtoSalida(id=1, numMatricula=123456, nombre=Juan, apellido=Perez)]
+2024-06-10 21:57:15 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-10 21:57:15 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 21:57:41 INFO  OdontologoService:51 - Listado de todos los odontólogos: []
+2024-06-10 22:00:07 INFO  TurnosService:51 - Listado de todos los turnos: {}[TurnoDtoSalida(id=1, fechaYHora=2024-06-15T10:30, odontologo=null, paciente=null)]
+2024-06-10 22:02:00 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-10 22:02:00 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 22:03:31 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-10 22:03:31 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 22:04:12 INFO  TurnosService:80 - Listado de todos los turnos: {}[TurnoDtoSalida(id=1, fechaYHora=2024-06-15T10:30, odontologo=null, paciente=null)]
+2024-06-10 22:07:11 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-10 22:07:11 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 22:09:45 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-10 22:09:45 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 22:10:07 INFO  TurnosService:77 - Listado de todos los turnos: {}[TurnoDtoSalida(id=1, fechaYHora=2024-06-15T10:30, odontologo=Odontólogo - Id: 1, Número Matrícula: 123456, Nombre: Juan, Apellido: Perez, paciente=Paciente - ID: 1,DNI : 12345678,Nombre : Juan,Apellido : Pérez,Domicilio : Domicilio{id=1, calle='Calle Principal', numero=123, localidad='Ciudad', provincia='Provincia'},Fecha Alta : 2024-06-02)]
+2024-06-10 22:12:14 INFO  TurnosService:77 - Listado de todos los turnos: {}[]
+2024-06-10 22:12:24 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-10 22:12:24 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 22:12:46 INFO  TurnosService:77 - Listado de todos los turnos: {}[TurnoDtoSalida(id=1, fechaYHora=2024-06-15T10:30, odontologo=Odontólogo - Id: 1, Número Matrícula: 123456, Nombre: Juan, Apellido: Perez, paciente=Paciente - ID: 1,DNI : 12345678,Nombre : Juan,Apellido : Pérez,Domicilio : Domicilio{id=1, calle='Calle Principal', numero=123, localidad='Ciudad', provincia='Provincia'},Fecha Alta : 2024-06-02)]
+2024-06-10 22:23:08 WARN  TurnosService:54 - No se encontró el el odontologo o el paciente
+2024-06-10 22:24:12 WARN  TurnosService:54 - No se encontró el el odontologo o el paciente
+2024-06-10 22:25:11 WARN  TurnosService:54 - No se encontró el el odontologo o el paciente
+2024-06-10 22:29:08 WARN  TurnosService:54 - No se encontró el el odontologo o el paciente
+2024-06-10 22:29:38 WARN  TurnosService:109 - No se encontró el turno con ID: 1

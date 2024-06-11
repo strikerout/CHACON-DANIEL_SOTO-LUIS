@@ -12,8 +12,7 @@ public class OdontologoDtoEntrada {
     private String nombre;
     private String apellido;
 
-    public OdontologoDtoEntrada(Long id, Long numMatricula, String nombre, String apellido) {
-        this.id = id;
+    public OdontologoDtoEntrada(Long numMatricula, String nombre, String apellido) {
         this.numMatricula = numMatricula;
         this.nombre = nombre;
         this.apellido = apellido;

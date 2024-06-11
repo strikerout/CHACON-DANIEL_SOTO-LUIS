@@ -56,8 +56,8 @@ public class PacienteService implements IPacienteService {
         List<PacienteDtoSalida> pacientes = pacienteRepository.findAll()
                 .stream()
                 .map(paciente -> {
-                    PacienteDtoSalida pacienteDtoSalida = modelMapper.map(paciente, PacienteDtoSalida.class);
-                    return pacienteDtoSalida;
+                    DomicilioDtoSalida domicilioDtoSalida = modelMapper.map(paciente.getDomicilio(), DomicilioDtoSalida.class);
+                    return PacienteDtoSalida.fromPacienteAndDomicilio(paciente, domicilioDtoSalida);
                 })
                 .toList();
 
@@ -66,5 +66,29 @@ public class PacienteService implements IPacienteService {
         return pacientes;
     }
 
+    @Override
+    public PacienteDtoSalida actualizarPaciente(Long id, PacienteDtoEntrada pacienteDtoEntrada) {
+        Paciente pacienteExistente = pacienteRepository.findById(id).orElse(null);
+        if (pacienteExistente == null) {
+            LOGGER.warn("No se encontró el paciente con ID: " + id);
+        }
 
+        modelMapper.map(pacienteDtoEntrada, pacienteExistente);
+        pacienteExistente = pacienteRepository.save(pacienteExistente);
+
+        PacienteDtoSalida pacienteDtoSalida = modelMapper.map(pacienteExistente, PacienteDtoSalida.class);
+        DomicilioDtoSalida domicilioDtoSalida = modelMapper.map(pacienteExistente.getDomicilio(), DomicilioDtoSalida.class);
+        pacienteDtoSalida.setDomicilioDtoSalida(domicilioDtoSalida);
+
+        return pacienteDtoSalida;
+    }
+
+    @Override
+    public void eliminarPaciente(Long id) {
+        if (pacienteRepository.existsById(id)) {
+            pacienteRepository.deleteById(id);
+        } else {
+            LOGGER.warn("No se encontró el paciente con ID: " + id);
+        }
+    }
 }

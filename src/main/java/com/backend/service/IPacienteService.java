@@ -13,4 +13,8 @@ public interface IPacienteService {
     PacienteDtoSalida guardarPaciente(PacienteDtoEntrada pacienteDtoEntrada);
 
     List<PacienteDtoSalida> listarTodosLosPacientes();
+
+    PacienteDtoSalida actualizarPaciente(Long id, PacienteDtoEntrada pacienteDtoEntrada);
+
+    void eliminarPaciente(Long id);
 }
