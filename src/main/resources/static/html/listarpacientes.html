@@ -42,33 +42,19 @@
     <div class="contenedor contenido-principal">
         <section class="formulario">
             <form action="">
-                <h1>Registrar Turno</h1>
-                <div class="campo">
-                    <label class="campo__label" for="paciente-id">ID del Paciente:</label>
-                    <input type="number" id="paciente-id" name="pacienteId">
-                    <button type="button" onclick="buscarPaciente()">Buscar Paciente</button>
-                </div>
+                <h1>Pacientes Registrados</h1>
                 
-                <div class="campo">
-                    <label for="odontologo" class="campo__label">Odontologo:</label>
-                    <select name="odontologo" id="odontologo" required>
-                        <option value="" disabled selected>Seleccione un odontólogo</option>
-                    </select>
-                </div>
-
-                <div class="campo">
-                    <label for="apellido" class="campo__label">Apellido:</label>
-                    <input type="date" id="fecha" name="fecha" required>
-                </div>
-                <div class="campo">
-                    <label for="hora" class="campo__label">Hora:</label>
-                    <input type="time" id="hora" name="hora" required>
-                </div>
-                <div class="campo">
-                    <input type="submit" value="Registrar" class="boton boton--primario">
-                </div>
 
                 
+
+                <div class="campo">
+                    <button type="button" class="boton boton--primario" >Modificar
+                        </button>
+                </div>
+                <div class="campo">
+                    <button type="button" class="boton boton--primario" >Eliminar
+                        </button>
+                </div>
             </form>
 
         </section>
