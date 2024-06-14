@@ -1,10 +1,8 @@
 package com.backend.controller;
 
-import com.backend.dto.entrada.PacienteDtoEntrada;
 import com.backend.dto.entrada.TurnoDtoEntrada;
 import com.backend.dto.salida.TurnoDtoSalida;
 import com.backend.exceptions.ResourceNotFoundException;
-import com.backend.service.IPacienteService;
 import com.backend.service.ITurnosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

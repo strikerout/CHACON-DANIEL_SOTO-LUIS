@@ -1,6 +1,5 @@
 package com.backend.dto.salida;
 
-import com.backend.entity.Paciente;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

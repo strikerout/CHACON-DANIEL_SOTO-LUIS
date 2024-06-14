@@ -1,6 +1,6 @@
 package com.backend.exceptions;
 
-public class ResourceNotFoundException extends Exception{
+public class ResourceNotFoundException extends Exception {
     public ResourceNotFoundException(String message) {
         super(message);
     }

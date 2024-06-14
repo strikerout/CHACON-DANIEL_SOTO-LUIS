@@ -16,7 +16,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler({ResourceNotFoundException.class})
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String, String> manejarResourceNotFoundException(ResourceNotFoundException resourceNotFoundException){
+    public Map<String, String> manejarResourceNotFoundException(ResourceNotFoundException resourceNotFoundException) {
         Map<String, String> mensaje = new HashMap<>();
         mensaje.put("mensaje", "Recurso no encontrado: " + resourceNotFoundException.getMessage());
         return mensaje;
@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
     // Manejador para BadRequestException
     @ExceptionHandler({BadRequestException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public Map<String, String> manejarBadRequestException(BadRequestException badRequestException){
+    public Map<String, String> manejarBadRequestException(BadRequestException badRequestException) {
         Map<String, String> mensaje = new HashMap<>();
         mensaje.put("mensaje", "Solicitud incorrecta: " + badRequestException.getMessage());
         return mensaje;
@@ -33,7 +33,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler({MethodArgumentNotValidException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public Map<String, String> manejarMethodArgumentNotValidException(MethodArgumentNotValidException methodArgumentNotValidException){
+    public Map<String, String> manejarMethodArgumentNotValidException(MethodArgumentNotValidException methodArgumentNotValidException) {
         Map<String, String> mensaje = new HashMap<>();
         methodArgumentNotValidException.getBindingResult().getAllErrors().forEach(e -> {
             String nombreCampo = ((FieldError) e).getField();

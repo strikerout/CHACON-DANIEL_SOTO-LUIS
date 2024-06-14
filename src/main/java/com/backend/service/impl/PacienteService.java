@@ -64,7 +64,7 @@ public class PacienteService implements IPacienteService {
 
         LOGGER.info("Listado de todos los pacientes: {}" + JsonPrinter.toString(pacientes));
 
-        if (pacientes.isEmpty()){
+        if (pacientes.isEmpty()) {
             LOGGER.warn("No se encontraron pacientes");
         }
         return pacientes;

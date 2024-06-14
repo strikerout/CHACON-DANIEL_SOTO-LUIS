@@ -15,7 +15,7 @@ public class Turno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     // Dani revisa esto aca no se si es leng o el tipo de dato.!!
-    @Column (length = 20)
+    @Column(length = 20)
     private LocalDateTime fechaYHora;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "odontologo_id")

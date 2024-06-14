@@ -24,9 +24,10 @@ class PacienteServiceTest {
 
     @Autowired
     IPacienteService pacienteService;
+
     @Test
     @Order(1)
-    void shouldSaveAPatientCorrectly(){
+    void shouldSaveAPatientCorrectly() {
         DomicilioEntradaDto domicilioEntradaDto = new DomicilioEntradaDto("Estanislao Lopez", 4514, "Malvin", "Montevideo");
         PacienteDtoEntrada pacienteDtoEntrada = new PacienteDtoEntrada(12345L, "Luisito", "Soto", LocalDate.now(), domicilioEntradaDto);
         PacienteDtoSalida pacienteGuardado = pacienteService.guardarPaciente(pacienteDtoEntrada);
@@ -35,36 +36,37 @@ class PacienteServiceTest {
 
     @Test
     @Order(2)
-    void shouldSearchAPatientCorrectly(){
+    void shouldSearchAPatientCorrectly() {
         assertDoesNotThrow(() -> pacienteService.buscarPaciente(1L));
     }
 
     @Test
     @Order(3)
-    void shouldFailOnSearchANotExistentPatient(){
+    void shouldFailOnSearchANotExistentPatient() {
         assertThrows(ResourceNotFoundException.class, () -> pacienteService.buscarPaciente(9999L));
     }
 
     @Test
     @Order(4)
-    void shouldListExistentPatients(){
+    void shouldListExistentPatients() {
         assertFalse(pacienteService.listarTodosLosPacientes().isEmpty());
     }
 
     @Test
     @Order(5)
-    void shouldDeleteAPatient(){
+    void shouldDeleteAPatient() {
         assertDoesNotThrow(() -> pacienteService.eliminarPaciente(1L));
     }
+
     @Test
     @Order(6)
-    void shouldFailOnDeleteANotExistentPatient(){
+    void shouldFailOnDeleteANotExistentPatient() {
         assertThrows(ResourceNotFoundException.class, () -> pacienteService.eliminarPaciente(9999L));
     }
 
     @Test
     @Order(7)
-    void shouldListAnEmptyListOfPatient(){
+    void shouldListAnEmptyListOfPatient() {
         assertTrue(pacienteService.listarTodosLosPacientes().isEmpty());
     }
 }
