@@ -37,13 +37,4 @@ public class Turno {
         this.paciente = paciente;
     }
 
-    @Override
-    public String toString() {
-        return "Turno{" +
-                "id=" + id +
-                ", fechaYHora=" + fechaYHora +
-                ", odontologo=" + odontologo +
-                ", paciente=" + paciente +
-                '}';
-    }
 }

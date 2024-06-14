@@ -12,13 +12,13 @@ import java.time.LocalDateTime;
 public class TurnoDtoSalida {
     private Long id;
     private LocalDateTime fechaYHora;
-    private Odontologo odontologo;
-    private Paciente paciente;
+    private OdontologoDtoSalida odontologoDtoSalida;
+    private PacienteDtoSalida pacienteDtoSalida;
 
-    public TurnoDtoSalida(Long id, LocalDateTime fechaYHora, Odontologo odontologo, Paciente paciente) {
+    public TurnoDtoSalida(Long id, LocalDateTime fechaYHora, OdontologoDtoSalida odontologoDtoSalida, PacienteDtoSalida pacienteDtoSalida) {
         this.id = id;
         this.fechaYHora = fechaYHora;
-        this.odontologo = odontologo;
-        this.paciente = paciente;
+        this.odontologoDtoSalida = odontologoDtoSalida;
+        this.pacienteDtoSalida = pacienteDtoSalida;
     }
 }

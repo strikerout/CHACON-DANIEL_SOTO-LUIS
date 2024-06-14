@@ -2,6 +2,7 @@ package com.backend.controller;
 
 import com.backend.dto.entrada.PacienteDtoEntrada;
 import com.backend.dto.salida.PacienteDtoSalida;
+import com.backend.exceptions.ResourceNotFoundException;
 import com.backend.service.IPacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,17 +33,17 @@ public class PacienteController {
     }
 
     @GetMapping("/{id}")
-    public PacienteDtoSalida buscarPaciente(@PathVariable Long id) {
+    public PacienteDtoSalida buscarPaciente(@PathVariable Long id) throws ResourceNotFoundException {
         return pacienteService.buscarPaciente(id);
     }
 
     @PutMapping("/{id}")
-    public PacienteDtoSalida actualizarPaciente(@PathVariable Long id, @RequestBody PacienteDtoEntrada pacienteDtoEntrada) {
+    public PacienteDtoSalida actualizarPaciente(@PathVariable Long id, @RequestBody PacienteDtoEntrada pacienteDtoEntrada) throws ResourceNotFoundException {
         return pacienteService.actualizarPaciente(id, pacienteDtoEntrada);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarPaciente(@PathVariable Long id) {
+    public void eliminarPaciente(@PathVariable Long id) throws ResourceNotFoundException {
         pacienteService.eliminarPaciente(id);
     }
 }

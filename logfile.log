@@ -437,3 +437,68 @@ Database may be already in use: "C:/Users/StrikerOut/clinica.mv.db". Possible so
 2024-06-10 22:25:11 WARN  TurnosService:54 - No se encontró el el odontologo o el paciente
 2024-06-10 22:29:08 WARN  TurnosService:54 - No se encontró el el odontologo o el paciente
 2024-06-10 22:29:38 WARN  TurnosService:109 - No se encontró el turno con ID: 1
+2024-06-10 22:37:38 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-10 22:37:38 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 23:41:18 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-10 23:41:18 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-10 23:41:31 INFO  PacienteService:64 - Listado de todos los pacientes: {}[PacienteDtoSalida(id=1, dni=12345678, nombre=Juan Augusto, apellido=Pérez, domicilioDtoSalida=DomicilioDtoSalida(id=1, calle=Calle Principal, numero=123, localidad=Ciudad, provincia=Provincia), fechaAlta=2024-06-02)]
+2024-06-10 23:42:07 INFO  OdontologoService:51 - Listado de todos los odontólogos: [OdontologoDtoSalida(id=1, numMatricula=123456, nombre=Maria Antonieta, apellido=Perez)]
+2024-06-10 23:42:40 INFO  TurnosService:73 - Listado de todos los turnos: {}[TurnoDtoSalida(id=1, fechaYHora=2024-06-15T10:30, odontologo=Odontólogo - Id: 1, Número Matrícula: 123456, Nombre: Maria Antonella, Apellido: Perez, paciente=Paciente - ID: 1,DNI : 12345678,Nombre : Juan Agustin,Apellido : Pérez,Domicilio : Domicilio{id=1, calle='Calle Principal', numero=123, localidad='Ciudad', provincia='Provincia'},Fecha Alta : 2024-06-02)]
+2024-06-13 20:32:05 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 20:32:05 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 20:40:21 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 20:40:21 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 20:42:47 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 20:42:47 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 20:47:23 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 20:47:23 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 20:48:44 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 20:48:44 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 20:51:55 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 20:51:55 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 20:53:38 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 20:53:38 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 20:58:48 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 20:58:48 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 21:00:10 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 21:00:10 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 21:02:23 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 21:02:23 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 21:05:12 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 21:05:12 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 21:05:33 INFO  TurnosService:93 - Listado de todos los turnos: {}[TurnoDtoSalida(id=1, fechaYHora=2024-06-15T10:30, odontologoDtoSalida=OdontologoDtoSalida(id=1, numMatricula=123456, nombre=Juan Martin, apellido=Perez), pacienteDtoSalida=PacienteDtoSalida(id=1, dni=12345678, nombre=Juan Augusto, apellido=Pérez, domicilioDtoSalida=DomicilioDtoSalida(id=1, calle=Calle Principal, numero=123, localidad=Ciudad, provincia=Provincia), fechaAlta=2024-06-02))]
+2024-06-13 21:06:03 INFO  TurnosService:93 - Listado de todos los turnos: {}[]
+2024-06-13 21:13:46 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 21:13:46 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 21:31:28 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 21:31:28 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 21:32:02 INFO  PacienteService:41 - Paciente encontrado con éxito: {  "id": 1,  "dni": 12345678,  "nombre": "Juan Augusto",  "apellido": "Pérez",  "domicilioDtoSalida": {    "id": 1,    "calle": "Calle Principal",    "numero": 123,    "localidad": "Ciudad",    "provincia": "Provincia"  },  "fechaAlta": "2024-06-02"}
+2024-06-13 21:37:03 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 21:37:03 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 21:37:04 INFO  PacienteService:52 - Paciente guardado con éxito: {  "id": 1,  "dni": 12345678,  "nombre": "Juan Augusto",  "apellido": "Pérez",  "domicilioDtoSalida": {    "id": 1,    "calle": "Calle Principal",    "numero": 123,    "localidad": "Ciudad",    "provincia": "Provincia"  },  "fechaAlta": "2024-06-02"}
+2024-06-13 21:37:14 INFO  PacienteService:65 - Listado de todos los pacientes: {}[  {    "id": 1,    "dni": 12345678,    "nombre": "Juan Augusto",    "apellido": "Pérez",    "domicilioDtoSalida": {      "id": 1,      "calle": "Calle Principal",      "numero": 123,      "localidad": "Ciudad",      "provincia": "Provincia"    },    "fechaAlta": "2024-06-02"  }]
+2024-06-13 21:37:17 INFO  PacienteService:41 - Paciente encontrado con éxito: {  "id": 1,  "dni": 12345678,  "nombre": "Juan Augusto",  "apellido": "Pérez",  "domicilioDtoSalida": {    "id": 1,    "calle": "Calle Principal",    "numero": 123,    "localidad": "Ciudad",    "provincia": "Provincia"  },  "fechaAlta": "2024-06-02"}
+2024-06-13 21:37:21 INFO  PacienteService:84 - Paciente actualizado con éxito: {  "id": 1,  "dni": 12345678,  "nombre": "Juana Agustina",  "apellido": "Pérez",  "domicilioDtoSalida": {    "id": 1,    "calle": "Calle Principale",    "numero": 123,    "localidad": "Ciudade",    "provincia": "Provinciae"  },  "fechaAlta": "2024-06-02"}
+2024-06-13 21:37:57 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 21:37:57 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-13 21:38:03 INFO  PacienteService:65 - Listado de todos los pacientes: {}[]
+2024-06-13 21:38:03 WARN  PacienteService:68 - No se encontraron pacientes
+2024-06-13 22:02:41 INFO  PacienteService:52 - Paciente guardado con éxito: {  "id": 1,  "dni": 12345,  "nombre": "Luisito",  "apellido": "Soto",  "domicilioDtoSalida": {    "id": 1,    "calle": "Estanislao Lopez",    "numero": 4514,    "localidad": "Malvin",    "provincia": "Montevideo"  },  "fechaAlta": "2024-06-13"}
+2024-06-13 22:04:42 INFO  PacienteService:52 - Paciente guardado con éxito: {  "id": 1,  "dni": 12345,  "nombre": "Luisito",  "apellido": "Soto",  "domicilioDtoSalida": {    "id": 1,    "calle": "Estanislao Lopez",    "numero": 4514,    "localidad": "Malvin",    "provincia": "Montevideo"  },  "fechaAlta": "2024-06-13"}
+2024-06-13 22:05:42 INFO  PacienteService:52 - Paciente guardado con éxito: {  "id": 1,  "dni": 12345,  "nombre": "Luisito",  "apellido": "Soto",  "domicilioDtoSalida": {    "id": 1,    "calle": "Estanislao Lopez",    "numero": 4514,    "localidad": "Malvin",    "provincia": "Montevideo"  },  "fechaAlta": "2024-06-13"}
+2024-06-13 22:05:43 INFO  PacienteService:41 - Paciente encontrado con éxito: {  "id": 1,  "dni": 12345,  "nombre": "Luisito",  "apellido": "Soto",  "domicilioDtoSalida": {    "id": 1,    "calle": "Estanislao Lopez",    "numero": 4514,    "localidad": "Malvin",    "provincia": "Montevideo"  },  "fechaAlta": "2024-06-13"}
+2024-06-13 22:07:58 WARN  PacienteService:94 - No se encontró el paciente con ID: 9999
+2024-06-13 22:11:38 INFO  PacienteService:52 - Paciente guardado con éxito: {  "id": 1,  "dni": 12345,  "nombre": "Luisito",  "apellido": "Soto",  "domicilioDtoSalida": {    "id": 1,    "calle": "Estanislao Lopez",    "numero": 4514,    "localidad": "Malvin",    "provincia": "Montevideo"  },  "fechaAlta": "2024-06-13"}
+2024-06-13 22:11:38 INFO  PacienteService:41 - Paciente encontrado con éxito: {  "id": 1,  "dni": 12345,  "nombre": "Luisito",  "apellido": "Soto",  "domicilioDtoSalida": {    "id": 1,    "calle": "Estanislao Lopez",    "numero": 4514,    "localidad": "Malvin",    "provincia": "Montevideo"  },  "fechaAlta": "2024-06-13"}
+2024-06-13 22:11:38 INFO  PacienteService:65 - Listado de todos los pacientes: {}[  {    "id": 1,    "dni": 12345,    "nombre": "Luisito",    "apellido": "Soto",    "domicilioDtoSalida": {      "id": 1,      "calle": "Estanislao Lopez",      "numero": 4514,      "localidad": "Malvin",      "provincia": "Montevideo"    },    "fechaAlta": "2024-06-13"  }]
+2024-06-13 22:11:38 WARN  PacienteService:94 - No se encontró el paciente con ID: 9999
+2024-06-13 22:11:38 INFO  PacienteService:65 - Listado de todos los pacientes: {}[]
+2024-06-13 22:11:38 WARN  PacienteService:68 - No se encontraron pacientes
+2024-06-13 22:13:11 INFO  PacienteService:52 - Paciente guardado con éxito: {  "id": 1,  "dni": 12345,  "nombre": "Luisito",  "apellido": "Soto",  "domicilioDtoSalida": {    "id": 1,    "calle": "Estanislao Lopez",    "numero": 4514,    "localidad": "Malvin",    "provincia": "Montevideo"  },  "fechaAlta": "2024-06-13"}
+2024-06-13 22:13:12 INFO  PacienteService:41 - Paciente encontrado con éxito: {  "id": 1,  "dni": 12345,  "nombre": "Luisito",  "apellido": "Soto",  "domicilioDtoSalida": {    "id": 1,    "calle": "Estanislao Lopez",    "numero": 4514,    "localidad": "Malvin",    "provincia": "Montevideo"  },  "fechaAlta": "2024-06-13"}
+2024-06-13 22:13:12 INFO  PacienteService:65 - Listado de todos los pacientes: {}[  {    "id": 1,    "dni": 12345,    "nombre": "Luisito",    "apellido": "Soto",    "domicilioDtoSalida": {      "id": 1,      "calle": "Estanislao Lopez",      "numero": 4514,      "localidad": "Malvin",      "provincia": "Montevideo"    },    "fechaAlta": "2024-06-13"  }]
+2024-06-13 22:13:12 WARN  PacienteService:94 - No se encontró el paciente con ID: 9999
+2024-06-13 22:13:12 INFO  PacienteService:65 - Listado de todos los pacientes: {}[]
+2024-06-13 22:13:12 WARN  PacienteService:68 - No se encontraron pacientes
+2024-06-13 22:13:19 INFO  ClinicaOdontologicaApplication:15 - Application works :)
+2024-06-13 22:13:19 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)

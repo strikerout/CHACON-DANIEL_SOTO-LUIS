@@ -45,9 +45,4 @@ public class Paciente {
         this.fechaAlta = fechaAlta;
     }
 
-
-    @Override
-    public String toString() {
-        return "Paciente - ID: " + getId() + ",DNI : " + getDni() + ",Nombre : " + getNombre() + ",Apellido : " + getApellido() + ",Domicilio : " + getDomicilio() + ",Fecha Alta : " + getFechaAlta();
-    }
 }
