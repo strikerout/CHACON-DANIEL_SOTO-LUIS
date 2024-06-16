@@ -1,6 +1,15 @@
-function mostrarSeccion(seccionId) {
-    // Ocultar todas las secciones
-    var secciones = document.querySelectorAll('.formulario');
+document.addEventListener('DOMContentLoaded', function () {
+    // Detectar la página actual y mostrar la primera sección por defecto
+    if (document.querySelector('#registro-paciente')) {
+        mostrarSeccion('registro-paciente', '.formulario-paciente');
+    } else if (document.querySelector('#registro-odontologo')) {
+        mostrarSeccion('registro-odontologo', '.formulario-odontologo');
+    }
+});
+
+function mostrarSeccion(seccionId, claseSeccion) {
+    // Ocultar todas las secciones específicas de la página
+    var secciones = document.querySelectorAll(claseSeccion);
     secciones.forEach(function (seccion) {
         seccion.classList.remove('mostrar');
     });
@@ -11,8 +20,3 @@ function mostrarSeccion(seccionId) {
         seccion.classList.add('mostrar');
     }
 }
-
-// Mostrar la primera sección por defecto
-document.addEventListener('DOMContentLoaded', function () {
-    mostrarSeccion('registro-paciente');
-});

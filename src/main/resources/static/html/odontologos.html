@@ -40,9 +40,17 @@
 </header>
 
 <div class="contenedor contenido-principal">
-    <section class="formulario">
+        <div class="botones-navegacion">
+            <button type="button" class="boton boton--primario"
+                onclick="mostrarSeccion('registro-odontologo', '.formulario-odontologo')">Registro Odontologo</button>
+            <button type="button" class="boton boton--primario"
+                onclick="mostrarSeccion('listar-odontologos', '.formulario-odontologo')">Listar Odontologo</button>
+            <button type="button" class="boton boton--primario"
+                onclick="mostrarSeccion('buscar-odontologo', '.formulario-odontologo')">Buscar Odontologo</button>
+        </div>
+    <section class="formulario" id="registro-odontologo">
         <form action="">
-            <h1>Registro Odontologo</h1>
+            <h1>Registro Odontologo </h1>
             <div class="campo">
                 <label class="campo__label" for="matricula">Matricula :</label>
                 <input id="" name="matricula" type="number">
@@ -80,7 +88,7 @@
         </div>
     </div>
 </footer>
-
+<script src="/js/script.js"></script>
 </body>
 
 </html>
