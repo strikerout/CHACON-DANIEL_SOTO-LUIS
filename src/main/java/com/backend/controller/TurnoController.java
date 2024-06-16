@@ -1,9 +1,8 @@
 package com.backend.controller;
 
-import com.backend.dto.entrada.PacienteDtoEntrada;
 import com.backend.dto.entrada.TurnoDtoEntrada;
 import com.backend.dto.salida.TurnoDtoSalida;
-import com.backend.service.IPacienteService;
+import com.backend.exceptions.ResourceNotFoundException;
 import com.backend.service.ITurnosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +22,7 @@ public class TurnoController {
 
     //POST
     @PostMapping("/registrar")
-    public TurnoDtoSalida registarTurno(@RequestBody TurnoDtoEntrada turnoDtoEntrada) {
+    public TurnoDtoSalida registarTurno(@RequestBody TurnoDtoEntrada turnoDtoEntrada) throws ResourceNotFoundException {
         return turnoService.guardarTurno(turnoDtoEntrada);
     }
 
@@ -34,17 +33,17 @@ public class TurnoController {
     }
 
     @GetMapping("/{id}")
-    public TurnoDtoSalida buscarTurno(@PathVariable Long id) {
+    public TurnoDtoSalida buscarTurno(@PathVariable Long id) throws ResourceNotFoundException {
         return turnoService.buscarTurno(id);
     }
 
     @PutMapping("/{id}")
-    public TurnoDtoSalida actualizarTurno(@PathVariable Long id, @RequestBody TurnoDtoEntrada turnoDtoEntrada) {
+    public TurnoDtoSalida actualizarTurno(@PathVariable Long id, @RequestBody TurnoDtoEntrada turnoDtoEntrada) throws ResourceNotFoundException {
         return turnoService.actualizarTurno(id, turnoDtoEntrada);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarTurno(@PathVariable Long id) {
+    public void eliminarTurno(@PathVariable Long id) throws ResourceNotFoundException {
         turnoService.eliminarTurno(id);
     }
 }

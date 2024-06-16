@@ -15,11 +15,11 @@ public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column (length = 20)
+    @Column(length = 20)
     private long dni;
-    @Column (length = 50)
+    @Column(length = 50)
     private String nombre;
-    @Column (length = 50)
+    @Column(length = 50)
     private String apellido;
     @Column(length = 20)
     private LocalDate fechaAlta;
@@ -45,9 +45,4 @@ public class Paciente {
         this.fechaAlta = fechaAlta;
     }
 
-
-    @Override
-    public String toString() {
-        return "Paciente - ID: " + getId() + ",DNI : " + getDni() + ",Nombre : " + getNombre() + ",Apellido : " + getApellido() + ",Domicilio : " + getDomicilio() + ",Fecha Alta : " + getFechaAlta();
-    }
 }
