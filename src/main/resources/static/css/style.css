@@ -177,13 +177,17 @@ img {
 }
 /**    Formulario    **/
 .formulario {
-    
     background-color: var(--secundario);
     margin: -5rem auto 0 auto;
     width: 95%;
     padding: 5rem;
     color: var(--blanco);
+    display: none;
 
+}
+
+.formulario.mostrar {
+    display: block;
 }
 
 .campo {

@@ -40,24 +40,24 @@
     </header>
 
     <div class="contenedor contenido-principal">
-        <section class="formulario">
+        <section class="formulario" id="registro-paciente">
             <form action="">
                 <h1>Registro Paciente</h1>
                 <div class="campo">
                     <label class="campo__label" for="dni">DNI :</label>
-                    <input type="number" name="nombre" id="">
+                    <input type="number" name="dni" id="">
                 </div>
                 <div class="campo">
                     <label for="nombre" class="campo__label">Nombre :</label>
-                    <input class="campo__fiel" type="text" name="nombre" id="" >
+                    <input class="campo__field" type="text" name="nombre" id="">
                 </div>
                 <div class="campo">
                     <label for="apellido" class="campo__label">Apellido :</label>
-                    <input type="text" name="nombre" id="">
+                    <input type="text" name="apellido" id="">
                 </div>
-                
+        
                 <h4>Datos de domicilio</h4>
-
+        
                 <div class="campo">
                     <label for="" class="campo__label">Calle</label>
                     <input type="text" name="calle" id="">
@@ -74,17 +74,48 @@
                     <label for="" class="campo__label">Provincia</label>
                     <input type="text" name="provincia" id="">
                 </div>
-
+        
                 <div class="campo">
                     <input type="submit" value="Registrar" class="boton boton--primario">
                 </div>
+
+            </form>
+        </section>
+        
+        <section class="formulario" id="listar-pacientes">
+            <form action="">
+                <h1>Listar Pacientes</h1>
                 <div class="campo">
-                    <button type="button" class="boton boton--primario" onclick="window.location.href='listarpacientes.html'">Listar
-                        Pacientes</button>
+                    <button type="button" class="boton boton--primario">Modificar</button>
+                </div>
+                <div class="campo">
+                    <button type="button" class="boton boton--primario">Eliminar</button>
                 </div>
             </form>
-
         </section>
+        
+        <section class="formulario" id="buscar-pacientes">
+            <form action="">
+                <h1>Buscar Pacientes</h1>
+                <div class="campo">
+                    <label class="campo__label" for="paciente-id">ID del Paciente:</label>
+                    <input type="number" id="paciente-id" name="pacienteId">
+                    <button type="button" onclick="buscarPaciente()">Buscar Paciente</button>
+                </div>
+            </form>
+        </section>
+        
+        <div class="botones-navegacion">
+            <button type="button" class="boton boton--primario" onclick="mostrarSeccion('registro-paciente')">Registro
+                Paciente</button>
+            <button type="button" class="boton boton--primario" onclick="mostrarSeccion('listar-pacientes')">Listar
+                Pacientes</button>
+            <button type="button" class="boton boton--primario" onclick="mostrarSeccion('buscar-pacientes')">Buscar
+                Pacientes</button>
+        </div>
+        </div>
+        
+        <script src="script.js"></script>
 
 
     </div>
@@ -104,6 +135,7 @@
         </div>
     </footer>
 
+    <script src="/js/script.js">  </script>
 </body>
 
 </html>
