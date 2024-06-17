@@ -48,7 +48,7 @@
             <button type="button" class="boton boton--primario"
                 onclick="mostrarSeccion('buscar-odontologo', '.formulario-odontologo')">Buscar </button>
         </div>
-    <section class="formulario" id="registro-odontologo">
+    <section class="formulario formulario-odontologo" id="registro-odontologo">
         <form action="">
             <h1>Registro Odontologo </h1>
             <div class="campo">
@@ -71,6 +71,34 @@
 
     </section>
 
+    <section class="formulario formulario-odontologo" id="listar-odontologos">
+        <form action="">
+            <h1>Listar Odontologos</h1>
+            <div class="campo">
+                <button type="button" class="boton boton--primario">Modificar</button>
+            </div>
+            <div class="campo">
+                <button type="button" class="boton boton--primario">Eliminar</button>
+            </div>
+        </form>
+    </section>
+    
+    <section class="formulario formulario-odontologo" id="buscar-odontologo">
+        <form action="">
+            <h1>Buscar Oontologos</h1>
+            <div class="campo">
+                <label class="campo__label" for="odontologo-id">Nombre :</label>
+                <input class="campo__field" type="number" id="odontologo-id" name="odontologoId">
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="odontologo-id">Matricula :</label>
+                <input class="campo__field" type="number" id="odontologo-id" name="odontologoId">
+            </div>
+            <div class="campo">
+                <button class="boton boton--primario" type="button" onclick="buscarOdontologo()">Buscar Odontologo</button>
+            </div>
+        </form>
+    </section>
 
 </div>
 <footer class="footer">
