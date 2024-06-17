@@ -183,7 +183,7 @@ form{
 .formulario {
 
     background-color: var(--secundario);
-    margin: 0rem auto 0 auto;
+    margin: -8rem auto 0 auto;
     width: 95%;
     padding: 5rem;
     color: var(--blanco);
@@ -212,8 +212,9 @@ form{
 }
 
 .campo__field {
-    flex: 1;
+    flex: 2;
     border: 1px solid var(--gris);
+
 }
 .boton {
     display: block;
@@ -237,10 +238,10 @@ form{
 }
 .botones-navegacion{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 95%;
     padding-top: 4rem;
-    margin: -10rem auto 0 auto;
+    margin: -12rem auto 0 auto;
 }
 @media (min-width: 768px) {
     .boton {

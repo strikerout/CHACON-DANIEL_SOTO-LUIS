@@ -40,13 +40,19 @@
 </header>
 
 <div class="contenedor contenido-principal">
-    <section class="formulario">
+    <section class="formulario" id="registro-turno">
         <form action="">
             <h1>Registrar Turno</h1>
             <div class="campo">
-                <label class="campo__label" for="paciente-id">ID del Paciente:</label>
-                <input id="paciente-id" name="pacienteId" type="number">
-                <button onclick="buscarPaciente()" type="button">Buscar Paciente</button>
+                <label class="campo__label" for="paciente-id">Nombre :</label>
+                <input class="campo__field" type="number" id="paciente-id" name="pacienteId">
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="paciente-id">ID :</label>
+                <input class="campo__field" type="number" id="paciente-id" name="pacienteId">
+            </div>
+            <div class="campo">
+                <button class="boton boton--primario" type="button" onclick="buscarPaciente()">Buscar Paciente</button>
             </div>
 
             <div class="campo">

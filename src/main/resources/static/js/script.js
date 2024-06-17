@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
         mostrarSeccion('registro-paciente', '.formulario-paciente');
     } else if (document.querySelector('#registro-odontologo')) {
         mostrarSeccion('registro-odontologo', '.formulario-odontologo');
+    } else if (document.querySelector('#registro-turno')){
+        mostrarSeccion('registro-turno')
     }
 });
 
