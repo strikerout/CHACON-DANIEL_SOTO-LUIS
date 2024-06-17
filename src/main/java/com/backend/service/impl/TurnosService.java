@@ -10,7 +10,7 @@ import com.backend.entity.Paciente;
 import com.backend.entity.Turno;
 import com.backend.exceptions.ResourceNotFoundException;
 import com.backend.repository.TurnoRepository;
-import com.backend.service.ITurnosService;
+import com.backend.service.ITurnoService;
 import com.backend.utils.JsonPrinter;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class TurnosService implements ITurnosService {
+public class TurnosService implements ITurnoService {
 
     private static final Logger LOGGER = Logger.getLogger(TurnosService.class);
     private final TurnoRepository turnoRepository;

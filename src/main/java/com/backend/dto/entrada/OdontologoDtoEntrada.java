@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OdontologoDtoEntrada {
 
-    private Long id;
     private Long numMatricula;
     private String nombre;
     private String apellido;

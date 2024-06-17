@@ -3,7 +3,7 @@ package com.backend.controller;
 import com.backend.dto.entrada.TurnoDtoEntrada;
 import com.backend.dto.salida.TurnoDtoSalida;
 import com.backend.exceptions.ResourceNotFoundException;
-import com.backend.service.ITurnosService;
+import com.backend.service.ITurnoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,10 +13,10 @@ import java.util.List;
 @RequestMapping("turnos")
 public class TurnoController {
 
-    private ITurnosService turnoService;
+    private ITurnoService turnoService;
 
     @Autowired
-    public TurnoController(ITurnosService turnoService) {
+    public TurnoController(ITurnoService turnoService) {
         this.turnoService = turnoService;
     }
 

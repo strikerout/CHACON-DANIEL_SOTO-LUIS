@@ -502,3 +502,32 @@ Database may be already in use: "C:/Users/StrikerOut/clinica.mv.db". Possible so
 2024-06-13 22:13:12 WARN  PacienteService:68 - No se encontraron pacientes
 2024-06-13 22:13:19 INFO  ClinicaOdontologicaApplication:15 - Application works :)
 2024-06-13 22:13:19 INFO  ClinicaOdontologicaApplication:16 - Created by: Chacón Daniel & Soto Luis :)
+2024-06-16 22:59:44 INFO  OdontologoService:44 - Odontólogo guardado con éxito: {  "id": 1,  "numMatricula": 112233,  "nombre": "Daniel",  "apellido": "Chacon"}
+2024-06-16 23:00:29 INFO  OdontologoService:44 - Odontólogo guardado con éxito: {  "id": 1,  "numMatricula": 112233,  "nombre": "Daniel",  "apellido": "Chacon"}
+2024-06-16 23:00:29 INFO  OdontologoService:36 - Odontólogo encontrado con éxito: {  "id": 1,  "numMatricula": 112233,  "nombre": "Daniel",  "apellido": "Chacon"}
+2024-06-16 23:00:29 INFO  OdontologoService:55 - Listado de todos los odontólogos: [  {    "id": 1,    "numMatricula": 112233,    "nombre": "Daniel",    "apellido": "Chacon"  }]
+2024-06-16 23:00:30 WARN  OdontologoService:87 - No se encontró el odontólogo con ID: 9999
+2024-06-16 23:00:30 INFO  OdontologoService:55 - Listado de todos los odontólogos: []
+2024-06-16 23:00:30 WARN  OdontologoService:58 - No se encontraron odontólogos
+2024-06-16 23:02:41 INFO  PacienteService:52 - Paciente guardado con éxito: {  "id": 1,  "dni": 12345,  "nombre": "Luisito",  "apellido": "Soto",  "domicilioDtoSalida": {    "id": 1,    "calle": "Estanislao Lopez",    "numero": 4514,    "localidad": "Malvin",    "provincia": "Montevideo"  },  "fechaAlta": "2024-06-16"}
+2024-06-16 23:02:41 INFO  PacienteService:41 - Paciente encontrado con éxito: {  "id": 1,  "dni": 12345,  "nombre": "Luisito",  "apellido": "Soto",  "domicilioDtoSalida": {    "id": 1,    "calle": "Estanislao Lopez",    "numero": 4514,    "localidad": "Malvin",    "provincia": "Montevideo"  },  "fechaAlta": "2024-06-16"}
+2024-06-16 23:02:41 INFO  PacienteService:65 - Listado de todos los pacientes: {}[  {    "id": 1,    "dni": 12345,    "nombre": "Luisito",    "apellido": "Soto",    "domicilioDtoSalida": {      "id": 1,      "calle": "Estanislao Lopez",      "numero": 4514,      "localidad": "Malvin",      "provincia": "Montevideo"    },    "fechaAlta": "2024-06-16"  }]
+2024-06-16 23:02:41 WARN  PacienteService:94 - No se encontró el paciente con ID: 9999
+2024-06-16 23:02:41 INFO  PacienteService:65 - Listado de todos los pacientes: {}[]
+2024-06-16 23:02:42 WARN  PacienteService:68 - No se encontraron pacientes
+2024-06-16 23:03:29 INFO  OdontologoService:44 - Odontólogo guardado con éxito: {  "id": 1,  "numMatricula": 112233,  "nombre": "Daniel",  "apellido": "Chacon"}
+2024-06-16 23:03:29 INFO  OdontologoService:36 - Odontólogo encontrado con éxito: {  "id": 1,  "numMatricula": 112233,  "nombre": "Daniel",  "apellido": "Chacon"}
+2024-06-16 23:03:29 INFO  OdontologoService:55 - Listado de todos los odontólogos: [  {    "id": 1,    "numMatricula": 112233,    "nombre": "Daniel",    "apellido": "Chacon"  }]
+2024-06-16 23:03:29 WARN  OdontologoService:87 - No se encontró el odontólogo con ID: 9999
+2024-06-16 23:03:29 INFO  OdontologoService:55 - Listado de todos los odontólogos: []
+2024-06-16 23:03:29 WARN  OdontologoService:58 - No se encontraron odontólogos
+2024-06-16 23:16:16 INFO  OdontologoService:44 - Odontólogo guardado con éxito: {  "id": 1,  "numMatricula": 112233,  "nombre": "Daniel",  "apellido": "Chacon"}
+2024-06-16 23:16:16 INFO  PacienteService:52 - Paciente guardado con éxito: {  "id": 1,  "dni": 12345,  "nombre": "Luisito",  "apellido": "Soto",  "domicilioDtoSalida": {    "id": 1,    "calle": "Estanislao Lopez",    "numero": 4514,    "localidad": "Malvin",    "provincia": "Montevideo"  },  "fechaAlta": "2024-06-16"}
+2024-06-16 23:16:17 INFO  OdontologoService:36 - Odontólogo encontrado con éxito: {  "id": 1,  "numMatricula": 112233,  "nombre": "Daniel",  "apellido": "Chacon"}
+2024-06-16 23:16:17 INFO  PacienteService:41 - Paciente encontrado con éxito: {  "id": 1,  "dni": 12345,  "nombre": "Luisito",  "apellido": "Soto",  "domicilioDtoSalida": {    "id": 1,    "calle": "Estanislao Lopez",    "numero": 4514,    "localidad": "Malvin",    "provincia": "Montevideo"  },  "fechaAlta": "2024-06-16"}
+2024-06-16 23:16:17 INFO  TurnosService:74 - Turno guardado con éxito: {  "id": 1,  "fechaYHora": "2024-06-16 23:16",  "odontologo": {    "id": 1,    "numMatricula": 112233,    "nombre": "Daniel",    "apellido": "Chacon"  },  "paciente": {    "id": 1,    "dni": 12345,    "nombre": "Luisito",    "apellido": "Soto",    "fechaAlta": "2024-06-16",    "domicilio": {      "id": 1,      "calle": "Estanislao Lopez",      "numero": 4514,      "localidad": "Malvin",      "provincia": "Montevideo"    }  }}
+2024-06-16 23:16:17 INFO  TurnosService:50 - Turno encontrado con éxito: {  "id": 1,  "fechaYHora": "2024-06-16 23:16",  "odontologo": {    "id": 1,    "numMatricula": 112233,    "nombre": "Daniel",    "apellido": "Chacon"  },  "paciente": {    "id": 1,    "dni": 12345,    "nombre": "Luisito",    "apellido": "Soto",    "fechaAlta": "2024-06-16",    "domicilio": {      "id": 1,      "calle": "Estanislao Lopez",      "numero": 4514,      "localidad": "Malvin",      "provincia": "Montevideo"    }  }}
+2024-06-16 23:16:17 INFO  TurnosService:86 - Listado de todos los turnos: {}[  {    "id": 1,    "fechaYHora": "2024-06-16 23:16",    "odontologoDtoSalida": {      "id": 1,      "numMatricula": 112233,      "nombre": "Daniel",      "apellido": "Chacon"    },    "pacienteDtoSalida": {      "id": 1,      "dni": 12345,      "nombre": "Luisito",      "apellido": "Soto",      "domicilioDtoSalida": {        "id": 1,        "calle": "Estanislao Lopez",        "numero": 4514,        "localidad": "Malvin",        "provincia": "Montevideo"      },      "fechaAlta": "2024-06-16"    }  }]
+2024-06-16 23:16:17 WARN  TurnosService:122 - No se encontró el turno con ID: 9999
+2024-06-16 23:16:17 INFO  TurnosService:86 - Listado de todos los turnos: {}[]
+2024-06-16 23:16:17 WARN  TurnosService:89 - No se encontraron turnos
