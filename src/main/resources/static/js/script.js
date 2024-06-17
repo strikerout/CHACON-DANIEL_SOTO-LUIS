@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function mostrarSeccion(seccionId, claseSeccion) {
     // Ocultar todas las secciones específicas de la página
+    document.getElementById('modificar-paciente').style.display = 'none';
+    document.getElementById('resultado-busqueda').style.display = 'none';
     var secciones = document.querySelectorAll(claseSeccion);
     secciones.forEach(function (seccion) {
         seccion.classList.remove('mostrar');

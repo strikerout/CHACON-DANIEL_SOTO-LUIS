@@ -249,3 +249,120 @@ form{
     }
 
 }
+
+/* Estilos para la tarjeta de resultado de búsqueda */
+#resultado-busqueda {
+    display: block; /* Mostrar la sección de resultado de búsqueda */
+    text-align: center; /* Alinear contenido al centro */
+    font-size: 20px;
+}
+
+.card {
+    background-color: var(--blanco); /* Fondo blanco */
+    border: 1px solid var(--gris); /* Borde gris */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px; /* Espaciado interno */
+    max-width: 600px; /* Ancho máximo de la tarjeta */
+    width: 100%; /* Ancho completo */
+    margin: 20px auto; /* Margen automático */
+}
+
+.card-body {
+    color: var(--negro); /* Color de texto negro */
+    font-size: 1.6rem; /* Tamaño de fuente */
+}
+
+.card-title {
+    color: var(--primario); /* Color primario (azul) para el título */
+    font-size: 2.4rem; /* Tamaño de fuente del título */
+    margin-bottom: 1.5rem; /* Espaciado inferior */
+}
+
+.card-text {
+    line-height: 1.8; /* Altura de línea */
+}
+
+.card-text p {
+    margin-bottom: 1rem; /* Espaciado entre párrafos */
+}
+
+.card-text strong {
+    font-weight: bold; /* Texto en negrita */
+    color: var(--primario); /* Color primario (azul) para los textos destacados */
+}
+/* Estilos para la sección de listar pacientes */
+#listar-pacientes, #registro-paciente, #buscar-pacientes {
+    background-color: var(--secundario); /* Fondo secundario */
+    padding: 3rem; /* Espaciado interno */
+    color: var(--blanco); /* Color de texto blanco */
+    display: none; /* Por defecto oculto */
+    text-align: center; /* Alineación central del contenido */
+    margin-top: 3rem; /* Espacio superior */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 80%; /* Ancho máximo */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto; /* Centrar horizontalmente */
+}
+
+#listar-pacientes.mostrar,  #registro-paciente.mostrar, #buscar-pacientes.mostrar {
+    display: block; /* Mostrar la sección cuando está activa */
+    margin-bottom: 3rem; /* Espacio inferior */
+}
+
+#tablaPacientes {
+    width: 100%;
+    border-collapse: collapse; /* Colapso de bordes de la tabla */
+    margin-top: 2rem;
+    background-color: var(--blanco); /* Fondo blanco para la tabla */
+}
+
+#tablaPacientes th,
+#tablaPacientes td {
+    padding: 1rem; /* Espaciado interno de celdas */
+    text-align: center; /* Alineación central del texto */
+    border: 1px solid var(--gris); /* Borde gris */
+}
+
+#tablaPacientes th {
+    background-color: var(--primario); /* Fondo primario (azul) para las cabeceras */
+    color: var(--blanco); /* Texto blanco para las cabeceras */
+}
+
+#tablaPacientes td {
+    background-color: var(--blanco); /* Fondo blanco para las celdas */
+    color: var(--negro); /* Texto negro para las celdas */
+}
+
+#tablaPacientes tbody tr:nth-child(even) {
+    background-color: var(--gris); /* Fondo gris para filas pares */
+}
+
+#tablaPacientes tbody tr:hover {
+    background-color: #f5f5f5; /* Color de fondo al pasar el mouse sobre la fila */
+}
+
+.boton-modificar,
+.boton-eliminar {
+    padding: 0.5rem 1rem; /* Espaciado interno reducido */
+    font-size: 1.6rem; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de puntero */
+    background-color: var(--negro); /* Fondo negro para botones */
+    color: var(--blanco); /* Texto blanco para botones */
+    transition: background-color 0.3s ease; /* Transición suave de color de fondo */
+    width: 95px;
+}
+
+.boton-modificar:hover,
+.boton-eliminar:hover {
+    background-color: var(--primario); /* Cambio de color al pasar el mouse */
+}
+
+@media (max-width: 768px) {
+    #tablaPacientes {
+        font-size: 1.4rem; /* Reducir tamaño de fuente en dispositivos móviles */
+    }
+}
+

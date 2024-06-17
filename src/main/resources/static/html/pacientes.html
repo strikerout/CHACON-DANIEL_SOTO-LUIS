@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DHodonlogia</title>
-    <meta content="pagina web odontologica" name="description">
+    <meta name="description" content="Página web odontológica">
 
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com../css2?family=Open+Sans:ital@0;1&family=PT+Sans:wght@400;700&display=swap"
-          rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
 
-    <!-- PreLoad -->
-    <link as="style" href="../css/normalize.css" rel="preload">
-    <link href="../css/normalize.css" rel="stylesheet">
-
-    <link as="style" href="../css/style.css" rel="preload">
-    <link href="../css/style.css" rel="stylesheet">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 <header class="header">
-
     <div class="contenedor">
         <div class="barra">
             <a class="logo" href="index.html">
@@ -36,52 +28,48 @@
             </nav>
         </div>
     </div>
-
 </header>
 
 <div class="contenedor contenido-principal">
     <div class="botones-navegacion">
-        <button type="button" class="boton boton--primario"
-            onclick="mostrarSeccion('registro-paciente', '.formulario-paciente')">Registrar</button>
-        <button type="button" class="boton boton--primario"
-            onclick="mostrarSeccion('listar-pacientes', '.formulario-paciente')">Listar </button>
-        <button type="button" class="boton boton--primario"
-            onclick="mostrarSeccion('buscar-pacientes', '.formulario-paciente')">Buscar </button>
+        <button type="button" class="boton boton--primario" onclick="mostrarSeccion('registro-paciente')">Registrar</button>
+        <button type="button" class="boton boton--primario" onclick="mostrarSeccion('listar-pacientes')">Listar</button>
+        <button type="button" class="boton boton--primario" onclick="mostrarSeccion('buscar-pacientes')">Buscar</button>
     </div>
 
     <section class="formulario formulario-paciente" id="registro-paciente">
-        <form action="">
+        <form id="formRegistro">
             <h1>Registro Paciente</h1>
             <div class="campo">
                 <label class="campo__label" for="dni">DNI :</label>
-                <input class="campo__field" type="number" name="dni" id="">
+                <input class="campo__field" type="number" name="dni" id="dni" required>
             </div>
             <div class="campo">
                 <label for="nombre" class="campo__label">Nombre :</label>
-                <input class="campo__field" type="text" name="nombre" id="">
+                <input class="campo__field" type="text" name="nombre" id="nombre" required>
             </div>
             <div class="campo">
                 <label for="apellido" class="campo__label">Apellido :</label>
-                <input class="campo__field" type="text" name="apellido" id="">
+                <input class="campo__field" type="text" name="apellido" id="apellido" required>
             </div>
 
             <h4>Datos de domicilio</h4>
 
             <div class="campo">
-                <label for="" class="campo__label">Calle</label>
-                <input class="campo__field" type="text" name="calle" id="">
+                <label for="calle" class="campo__label">Calle</label>
+                <input class="campo__field" type="text" name="calle" id="calle" required>
             </div>
             <div class="campo">
-                <label for="" class="campo__label">Numero</label>
-                <input class="campo__field" type="number" name="numero" id="">
+                <label for="numero" class="campo__label">Numero</label>
+                <input class="campo__field" type="number" name="numero" id="numero" required>
             </div>
             <div class="campo">
-                <label for="" class="campo__label">Localidad</label>
-                <input class="campo__field" type="text" name="localidad" id="">
+                <label for="localidad" class="campo__label">Localidad</label>
+                <input class="campo__field" type="text" name="localidad" id="localidad" required>
             </div>
             <div class="campo">
-                <label for="" class="campo__label">Provincia</label>
-                <input class="campo__field" type="text" name="provincia" id="">
+                <label for="provincia" class="campo__label">Provincia</label>
+                <input class="campo__field" type="text" name="provincia" id="provincia" required>
             </div>
 
             <div class="campo">
@@ -90,28 +78,35 @@
         </form>
     </section>
 
-    <section class="formulario formulario-paciente" id="listar-pacientes">
-        <form action="">
-            <h1>Listar Pacientes</h1>
-            <div class="campo">
-                <button type="button" class="boton boton--primario">Modificar</button>
-            </div>
-            <div class="campo">
-                <button type="button" class="boton boton--primario">Eliminar</button>
-            </div>
-        </form>
+    <section class="formulario formulario-paciente" id="listar-pacientes" style="display: none;">
+        <h1>Listar Pacientes</h1>
+        <div class="tabla-pacientes"></div>
+        <!-- Tabla para listar pacientes -->
+        <table id="tablaPacientes">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Calle</th>
+                <th>Número</th>
+                <th>Localidad</th>
+                <th>Provincia</th>
+                <th>Fecha de Alta</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </section>
 
-    <section class="formulario formulario-paciente" id="buscar-pacientes">
-        <form action="">
+    <section class="formulario formulario-paciente" id="buscar-pacientes" style="display: none;">
+        <form id="formBuscarPaciente">
             <h1>Buscar Pacientes</h1>
             <div class="campo">
-                <label class="campo__label" for="paciente-id">Nombre :</label>
-                <input class="campo__field" type="number" id="paciente-id" name="pacienteId">
-            </div>
-            <div class="campo">
-                <label class="campo__label" for="paciente-id">ID :</label>
-                <input class="campo__field" type="number" id="paciente-id" name="pacienteId">
+                <label class="campo__label" for="buscar-id">ID del Paciente:</label>
+                <input class="campo__field" type="number" id="buscar-id" name="buscarId">
             </div>
             <div class="campo">
                 <button class="boton boton--primario" type="button" onclick="buscarPaciente()">Buscar Paciente</button>
@@ -119,10 +114,67 @@
         </form>
     </section>
     
-</div>
-
-
+    <section id="resultado-busqueda" style="display: none;">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Datos del Paciente</h5>
+                <div class="card-text" id="datos-paciente">
+                   
+                </div>
+            </div>
+        </div>
+    </section>
     
+    <section class="formulario formulario-paciente" id="modificar-paciente" style="display: none;">
+        <form id="formModificar">
+            <h1>Modificar Paciente</h1>
+            <div class="campo">
+                <label class="campo__label" for="dni">DNI :</label>
+                <input class="campo__field" type="number" name="dni" id="dniModificar" required>
+            </div>
+            <div class="campo">
+                <label for="nombre" class="campo__label">Nombre :</label>
+                <input class="campo__field" type="text" name="nombre" id="nombreModificar" required>
+            </div>
+            <div class="campo">
+                <label for="apellido" class="campo__label">Apellido :</label>
+                <input class="campo__field" type="text" name="apellido" id="apellidoModificar" required>
+            </div>
+    
+            <div class="campo">
+                <label for="fechaAlta" class="campo__label">Fecha de Alta :</label>
+                <input class="campo__field" type="date" name="fechaAlta" id="fechaAltaModificar" required>
+            </div>
+    
+            <h4>Datos de domicilio</h4>
+    
+            <div class="campo">
+                <label for="calle" class="campo__label">Calle</label>
+                <input class="campo__field" type="text" name="calle" id="calleModificar" required>
+            </div>
+            <div class="campo">
+                <label for="numero" class="campo__label">Número</label>
+                <input class="campo__field" type="number" name="numero" id="numeroModificar" required>
+            </div>
+            <div class="campo">
+                <label for="localidad" class="campo__label">Localidad</label>
+                <input class="campo__field" type="text" name="localidad" id="localidadModificar" required>
+            </div>
+            <div class="campo">
+                <label for="provincia" class="campo__label">Provincia</label>
+                <input class="campo__field" type="text" name="provincia" id="provinciaModificar" required>
+            </div>
+    
+            <div class="campo">
+                <input type="submit" value="Modificar" class="boton boton--primario">
+                <button type="button" class="boton boton--primario" onclick="cancelarModificacion()">Cancelar</button>
+            </div>
+        </form>
+    </section>
+    
+    
+
+</div>
 
 
 
@@ -142,8 +194,8 @@
     </div>
 </footer>
 
-
+<!-- Archivos JavaScript -->
+<script src="../js/pacientes.js"></script>
 <script src="../js/script.js"></script>
 </body>
-
 </html>
