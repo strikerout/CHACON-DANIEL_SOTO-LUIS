@@ -15,6 +15,11 @@ function mostrarSeccion(seccionId, claseSeccion) {
     if (modificarPaciente) {
         modificarPaciente.style.display = 'none';
     }
+
+    var modificarOdontologo = document.getElementById('modificar-odontologo');
+    if (modificarOdontologo) {
+        modificarOdontologo.style.display = 'none';
+    }
     
     var resultadoBusqueda = document.getElementById('resultado-busqueda');
     if (resultadoBusqueda) {

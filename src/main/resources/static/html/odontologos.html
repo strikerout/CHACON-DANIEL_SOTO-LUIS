@@ -22,7 +22,6 @@
 
 <body>
 <header class="header">
-
     <div class="contenedor">
         <div class="barra">
             <a class="logo" href="index.html">
@@ -36,86 +35,101 @@
             </nav>
         </div>
     </div>
-
 </header>
 
 <div class="contenedor contenido-principal">
-        <div class="botones-navegacion">
-            <button type="button" class="boton boton--primario"
-                onclick="mostrarSeccion('registro-odontologo', '.formulario-odontologo')">Registrar</button>
-            <button type="button" class="boton boton--primario"
-                onclick="mostrarSeccion('listar-odontologos', '.formulario-odontologo')">Listar</button>
-            <button type="button" class="boton boton--primario"
-                onclick="mostrarSeccion('buscar-odontologo', '.formulario-odontologo')">Buscar </button>
-        </div>
+    <div class="botones-navegacion">
+        <button type="button" class="boton boton--primario" onclick="mostrarSeccion('registro-odontologo', '.formulario-odontologo')">Registrar</button>
+        <button type="button" class="boton boton--primario" onclick="mostrarSeccion('listar-odontologos', '.formulario-odontologo')">Listar</button>
+        <button type="button" class="boton boton--primario" onclick="mostrarSeccion('buscar-odontologo', '.formulario-odontologo')">Buscar</button>
+    </div>
     <section class="formulario formulario-odontologo" id="registro-odontologo">
-        <form action="">
+        <form id="registro-form">
             <h1>Registro Odontologo </h1>
             <div class="campo">
                 <label class="campo__label" for="matricula">Matricula :</label>
-                <input id="" name="matricula" type="number">
+                <input required id="matricula" name="matricula" type="number">
             </div>
             <div class="campo">
                 <label class="campo__label" for="nombre">Nombre :</label>
-                <input class="campo__fiel" id="" name="nombre" type="text">
+                <input required id="nombre" name="nombre" type="text">
             </div>
             <div class="campo">
                 <label class="campo__label" for="apellido">Apellido :</label>
-                <input id="" name="apellido" type="text">
+                <input required id="apellido" name="apellido" type="text">
             </div>
-
             <div class="campo">
-                <input class="boton boton--primario" type="submit" value="Registrar">
+                <input required class="boton boton--primario" type="submit" value="Registrar">
             </div>
         </form>
-
     </section>
 
-    <section class="formulario formulario-odontologo" id="listar-odontologos">
-        <form action="">
-            <h1>Listar Odontologos</h1>
+    <section class="formulario formulario-odontologo" id="listar-odontologos" style="display: none;">
+        <h1>Listar Odontologos</h1>
+        <div class="tabla-odontologos"></div>
+        <table id="tablaOdontologos">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Matrícula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section class="formulario formulario-odontologo" id="buscar-odontologo">
+        <form id="buscar-form">
+            <h1>Buscar Odontologo</h1>
             <div class="campo">
-                <button type="button" class="boton boton--primario">Modificar</button>
+                <label class="campo__label" for="odontologo-id">ID :</label>
+                <input required id="odontologo-id" name="id" type="number">
             </div>
             <div class="campo">
-                <button type="button" class="boton boton--primario">Eliminar</button>
+                <input required class="boton boton--primario" type="submit" value="Buscar">
+            </div>
+        </form>
+    </section>
+    <section id="resultado-busqueda" style="display: none;">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Datos del Odontologo</h5>
+                <div class="card-text" id="datos-odontologo">
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="formulario formulario-odontologo" id="modificar-odontologo" style="display: none;">
+        <form id="formModificar">
+            <h1>Modificar Odontólogo</h1>
+            <div class="campo">
+                <label class="campo__label" for="matricula">Matrícula :</label>
+                <input class="campo__field" type="number" name="matricula" id="matriculaModificar" required>
+            </div>
+            <div class="campo">
+                <label for="nombre" class="campo__label">Nombre :</label>
+                <input class="campo__field" type="text" name="nombre" id="nombreModificar" required>
+            </div>
+            <div class="campo">
+                <label for="apellido" class="campo__label">Apellido :</label>
+                <input class="campo__field" type="text" name="apellido" id="apellidoModificar" required>
+            </div>
+    
+            <div class="campo">
+                <input type="submit" value="Modificar" class="boton boton--primario">
+                <button type="button" class="boton boton--primario" onclick="cancelarModificacion()">Cancelar</button>
             </div>
         </form>
     </section>
     
-    <section class="formulario formulario-odontologo" id="buscar-odontologo">
-        <form action="">
-            <h1>Buscar Oontologos</h1>
-            <div class="campo">
-                <label class="campo__label" for="odontologo-id">Nombre :</label>
-                <input class="campo__field" type="number" id="odontologo-id" name="odontologoId">
-            </div>
-            <div class="campo">
-                <label class="campo__label" for="odontologo-id">Matricula :</label>
-                <input class="campo__field" type="number" id="odontologo-id" name="odontologoId">
-            </div>
-            <div class="campo">
-                <button class="boton boton--primario" type="button" onclick="buscarOdontologo()">Buscar Odontologo</button>
-            </div>
-        </form>
-    </section>
-
 </div>
-<footer class="footer">
-    <div class="contenedor">
-        <div class="barra">
-            <a class="logo" href="index.html">
-                <h1 class="logo__nombre no-margin centrar-texto">DH<span class="logo__bold">Odontologia</span></h1>
-            </a>
-            <nav class="navegacion">
-                <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
-                <a class="navegacion__enlace" href="pacientes.html">Registro</a>
-                <a class="navegacion__enlace" href="odontologos.html">Odontologos</a>
-                <a class="navegacion__enlace" href="turno.html">Turnos</a>
-            </nav>
-        </div>
-    </div>
-</footer>
+
+<script src="../js/odontologos.js"></script>
 <script src="../js/script.js"></script>
 </body>
 

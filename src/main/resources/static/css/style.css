@@ -202,20 +202,13 @@ form{
     display: flex;
     margin-bottom: 2rem;
     gap: 2rem;
-
 }
 
 .campo__label {
     flex: 0 0 9rem;
     text-align: right;
-
 }
 
-.campo__field {
-    flex: 2;
-    border: 1px solid var(--gris);
-
-}
 .boton {
     display: block;
     font-family: var(--fuenteHeading);
@@ -291,8 +284,9 @@ form{
     font-weight: bold; /* Texto en negrita */
     color: var(--primario); /* Color primario (azul) para los textos destacados */
 }
-/* Estilos para la sección de listar pacientes */
-#listar-pacientes, #registro-paciente, #buscar-pacientes {
+/* Estilos comunes para formularios de pacientes y odontólogos */
+.formulario-odontologo,
+.formulario-paciente {
     background-color: var(--secundario); /* Fondo secundario */
     padding: 3rem; /* Espaciado interno */
     color: var(--blanco); /* Color de texto blanco */
@@ -306,11 +300,20 @@ form{
     margin-right: auto; /* Centrar horizontalmente */
 }
 
-#listar-pacientes.mostrar,  #registro-paciente.mostrar, #buscar-pacientes.mostrar {
-    display: block; /* Mostrar la sección cuando está activa */
+/* Mostrar la sección cuando está activa */
+#listar-odontologos.mostrar,
+#registro-odontologo.mostrar,
+#buscar-odontologo.mostrar,
+#modificar-odontologo.mostrar,
+#listar-pacientes.mostrar,
+#registro-paciente.mostrar,
+#buscar-pacientes.mostrar {
+    display: block;
     margin-bottom: 3rem; /* Espacio inferior */
 }
 
+/* Estilos específicos para las tablas de pacientes y odontólogos */
+#tablaOdontologos,
 #tablaPacientes {
     width: 100%;
     border-collapse: collapse; /* Colapso de bordes de la tabla */
@@ -318,6 +321,8 @@ form{
     background-color: var(--blanco); /* Fondo blanco para la tabla */
 }
 
+#tablaOdontologos th,
+#tablaOdontologos td,
 #tablaPacientes th,
 #tablaPacientes td {
     padding: 1rem; /* Espaciado interno de celdas */
@@ -325,24 +330,29 @@ form{
     border: 1px solid var(--gris); /* Borde gris */
 }
 
+#tablaOdontologos th,
 #tablaPacientes th {
     background-color: var(--primario); /* Fondo primario (azul) para las cabeceras */
     color: var(--blanco); /* Texto blanco para las cabeceras */
 }
 
+#tablaOdontologos td,
 #tablaPacientes td {
     background-color: var(--blanco); /* Fondo blanco para las celdas */
     color: var(--negro); /* Texto negro para las celdas */
 }
 
+#tablaOdontologos tbody tr:nth-child(even),
 #tablaPacientes tbody tr:nth-child(even) {
     background-color: var(--gris); /* Fondo gris para filas pares */
 }
 
+#tablaOdontologos tbody tr:hover,
 #tablaPacientes tbody tr:hover {
     background-color: #f5f5f5; /* Color de fondo al pasar el mouse sobre la fila */
 }
 
+/* Estilos comunes para botones de modificar y eliminar */
 .boton-modificar,
 .boton-eliminar {
     padding: 0.5rem 1rem; /* Espaciado interno reducido */
@@ -361,8 +371,11 @@ form{
 }
 
 @media (max-width: 768px) {
+    /* Reducir tamaño de fuente en dispositivos móviles */
+    #tablaOdontologos,
     #tablaPacientes {
-        font-size: 1.4rem; /* Reducir tamaño de fuente en dispositivos móviles */
+        font-size: 1.4rem;
     }
 }
+
 
