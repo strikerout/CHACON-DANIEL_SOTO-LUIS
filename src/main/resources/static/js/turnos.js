@@ -1,37 +1,6 @@
 const apiUrlTurnos = "http://localhost:8080/turnos/";
-const apiUrlOdontologos = "http://localhost:8080/odontologos/";
-const apiUrlPacientes = "http://localhost:8080/pacientes/";
-function cargarOpcionesSelect() {
-    fetch(apiUrlOdontologos+'listar')
-        .then(response => response.json())
-        .then(odontologos => {
-            var selectOdontologos = document.getElementById('registro-odontologo');
-            selectOdontologos.innerHTML = '';
-            odontologos.forEach(odontologo => {
-                var option = document.createElement('option');
-                option.value = odontologo.id;
-                option.textContent = `${odontologo.nombre} ${odontologo.apellido}`;
-                selectOdontologos.appendChild(option);
-            });
-        })
-        .catch(error => console.error('Error cargando odontólogos:', error));
 
-    fetch(apiUrlPacientes+'listar')
-        .then(response => response.json())
-        .then(pacientes => {
-            var selectPacientes = document.getElementById('registro-paciente');
-            selectPacientes.innerHTML = '';
-            pacientes.forEach(paciente => {
-                var option = document.createElement('option');
-                option.value = paciente.id;
-                option.textContent = `${paciente.nombre} ${paciente.apellido}`;
-                selectPacientes.appendChild(option);
-            });
-        })
-        .catch(error => console.error('Error cargando pacientes:', error));
-}
 document.addEventListener("DOMContentLoaded", () => {
-    cargarOpcionesSelect(); 
     var seccionRegistroTurno = document.getElementById('registro-turno');
     var seccionListarTurnos = document.getElementById('listar-turnos');
     var seccionBuscarTurno = document.getElementById('buscar-turno');
@@ -133,10 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li><strong>Calle:</strong> ${turno.pacienteDtoSalida.domicilioDtoSalida.calle}</li>
                         <li><strong>Número:</strong> ${turno.pacienteDtoSalida.domicilioDtoSalida.numero}</li>
                         <li><strong>Localidad:</strong> ${turno.pacienteDtoSalida.domicilioDtoSalida.localidad}</li>
-                        <li><strong>Provincia:</strong> ${turno.pacienteDtoSalida.domicilioDtoSalida.provincia}</li>
-                    <button onclick="eliminarTurno(${turno.id})">Eliminar</button>
-                    <button onclick="mostrarSeccionModificarTurno(${turno.id})">Modificar</button>
-                `;
+                        <li><strong>Provincia:</strong> ${turno.pacienteDtoSalida.domicilioDtoSalida.provincia}</li>   
+                `
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -157,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
             odontologoId: parseInt(formData.get('odontologoId')),
             fechaYHora: fechaHora
         };
-    
+
         fetch(apiUrlTurnos + turnoId, {
             method: 'PUT',
             headers: {
@@ -173,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .catch(error => console.error('Error:', error));
     });
-    
+
 });
 
 function listarTurnos() {
@@ -194,10 +161,12 @@ function listarTurnos() {
                 var accionesCell = row.insertCell(6);
                 var btnEliminar = document.createElement('button');
                 btnEliminar.textContent = 'Eliminar';
+                btnEliminar.className = 'boton-eliminar';
                 btnEliminar.onclick = () => eliminarTurno(turno.id);
                 accionesCell.appendChild(btnEliminar);
                 var btnModificar = document.createElement('button');
                 btnModificar.textContent = 'Modificar';
+                btnModificar.className = 'boton-modificar';
                 btnModificar.onclick = () => mostrarSeccionModificarTurno(turno.id);
                 accionesCell.appendChild(btnModificar);
             });
@@ -228,7 +197,7 @@ function mostrarSeccionModificarTurno(turnoId) {
             // Asignar valores al formulario de modificación
             document.getElementById('modificar-paciente-id').value = turno.pacienteDtoSalida.id;
             document.getElementById('modificar-odontologo-id').value = turno.odontologoDtoSalida.id;
-            
+
             // Separar fecha y hora del formato "YYYY-MM-DDTHH:MM:SS" recibido
             var fechaHora = turno.fechaYHora.split('T');
             var fecha = fechaHora[0];

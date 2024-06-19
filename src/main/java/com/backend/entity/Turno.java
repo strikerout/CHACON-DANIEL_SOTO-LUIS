@@ -18,11 +18,11 @@ public class Turno {
     @Column(nullable = false)
     private LocalDateTime fechaYHora;
 
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "odontologo_id", nullable = false)
     private Odontologo odontologo;
 
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "paciente_id", nullable = false)
     private Paciente paciente;
 

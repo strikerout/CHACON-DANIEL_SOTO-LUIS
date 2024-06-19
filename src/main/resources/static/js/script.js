@@ -20,6 +20,11 @@ function mostrarSeccion(seccionId, claseSeccion) {
     if (modificarOdontologo) {
         modificarOdontologo.style.display = 'none';
     }
+
+    var modificarTurno = document.getElementById('modificar-turno');
+    if (modificarTurno) {
+        modificarTurno.style.display = 'none';
+    }
     
     var resultadoBusqueda = document.getElementById('resultado-busqueda');
     if (resultadoBusqueda) {

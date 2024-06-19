@@ -283,10 +283,10 @@ form{
 .card-text strong {
     font-weight: bold; /* Texto en negrita */
     color: var(--primario); /* Color primario (azul) para los textos destacados */
-}
-/* Estilos comunes para formularios de pacientes y odontólogos */
+}/* Estilos comunes para formularios de pacientes, odontólogos y turnos */
 .formulario-odontologo,
-.formulario-paciente {
+.formulario-paciente,
+.formulario-turno {
     background-color: var(--secundario); /* Fondo secundario */
     padding: 3rem; /* Espaciado interno */
     color: var(--blanco); /* Color de texto blanco */
@@ -301,20 +301,23 @@ form{
 }
 
 /* Mostrar la sección cuando está activa */
-#listar-odontologos.mostrar,
+.formulario-turno.mostrar,
 #registro-odontologo.mostrar,
 #buscar-odontologo.mostrar,
 #modificar-odontologo.mostrar,
-#listar-pacientes.mostrar,
 #registro-paciente.mostrar,
-#buscar-pacientes.mostrar {
+#buscar-pacientes.mostrar,
+#registro-turno.mostrar,
+#listar-turnos.mostrar,
+#buscar-turno.mostrar {
     display: block;
     margin-bottom: 3rem; /* Espacio inferior */
 }
 
-/* Estilos específicos para las tablas de pacientes y odontólogos */
+/* Estilos específicos para las tablas de pacientes, odontólogos y turnos */
 #tablaOdontologos,
-#tablaPacientes {
+#tablaPacientes,
+#tablaTurnos {
     width: 100%;
     border-collapse: collapse; /* Colapso de bordes de la tabla */
     margin-top: 2rem;
@@ -324,31 +327,37 @@ form{
 #tablaOdontologos th,
 #tablaOdontologos td,
 #tablaPacientes th,
-#tablaPacientes td {
+#tablaPacientes td,
+#tablaTurnos th,
+#tablaTurnos td {
     padding: 1rem; /* Espaciado interno de celdas */
     text-align: center; /* Alineación central del texto */
     border: 1px solid var(--gris); /* Borde gris */
 }
 
 #tablaOdontologos th,
-#tablaPacientes th {
+#tablaPacientes th,
+#tablaTurnos th {
     background-color: var(--primario); /* Fondo primario (azul) para las cabeceras */
     color: var(--blanco); /* Texto blanco para las cabeceras */
 }
 
 #tablaOdontologos td,
-#tablaPacientes td {
+#tablaPacientes td,
+#tablaTurnos td {
     background-color: var(--blanco); /* Fondo blanco para las celdas */
     color: var(--negro); /* Texto negro para las celdas */
 }
 
 #tablaOdontologos tbody tr:nth-child(even),
-#tablaPacientes tbody tr:nth-child(even) {
+#tablaPacientes tbody tr:nth-child(even),
+#tablaTurnos tbody tr:nth-child(even) {
     background-color: var(--gris); /* Fondo gris para filas pares */
 }
 
 #tablaOdontologos tbody tr:hover,
-#tablaPacientes tbody tr:hover {
+#tablaPacientes tbody tr:hover,
+#tablaTurnos tbody tr:hover {
     background-color: #f5f5f5; /* Color de fondo al pasar el mouse sobre la fila */
 }
 
@@ -373,9 +382,8 @@ form{
 @media (max-width: 768px) {
     /* Reducir tamaño de fuente en dispositivos móviles */
     #tablaOdontologos,
-    #tablaPacientes {
+    #tablaPacientes,
+    #tablaTurnos {
         font-size: 1.4rem;
     }
 }
-
-
