@@ -11,7 +11,7 @@ import java.util.List;
 public interface ITurnoService {
     TurnoDtoSalida buscarTurno(Long id) throws ResourceNotFoundException;
 
-    TurnoDtoSalida guardarTurno(TurnoDtoEntrada turno) throws ResourceNotFoundException;
+    TurnoDtoSalida guardarTurno(TurnoDtoEntrada turno);
 
     List<TurnoDtoSalida> listarTodosLosTurnos();
 

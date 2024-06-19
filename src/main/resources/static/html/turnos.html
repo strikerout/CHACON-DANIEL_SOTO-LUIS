@@ -22,7 +22,6 @@
 
 <body>
 <header class="header">
-
     <div class="contenedor">
         <div class="barra">
             <a class="logo" href="index.html">
@@ -36,66 +35,108 @@
             </nav>
         </div>
     </div>
-
 </header>
 
 <div class="contenedor contenido-principal">
-    <section class="formulario" id="registro-turno">
-        <form action="">
+    <div class="botones-navegacion">
+        <button type="button" class="boton boton--primario" onclick="mostrarSeccion('registro-turno', '.formulario-turno')">Registrar</button>
+        <button type="button" class="boton boton--primario" onclick="mostrarSeccion('listar-turnos', '.formulario-turno')">Listar</button>
+        <button type="button" class="boton boton--primario" onclick="mostrarSeccion('buscar-turno', '.formulario-turno')">Buscar</button>
+    </div>
+    <section class="formulario formulario-turno" id="registro-turno">
+        <form id="registro-turno-form">
             <h1>Registrar Turno</h1>
             <div class="campo">
-                <label class="campo__label" for="paciente-id">Nombre :</label>
-                <input class="campo__field" type="number" id="paciente-id" name="pacienteId">
+                <label class="campo__label" for="paciente-id">ID Paciente:</label>
+                <input required class="campo__field" type="number" id="paciente-id" name="pacienteId">
             </div>
             <div class="campo">
-                <label class="campo__label" for="paciente-id">ID :</label>
-                <input class="campo__field" type="number" id="paciente-id" name="pacienteId">
+                <label class="campo__label" for="odontologo-id">ID Odontólogo:</label>
+                <input required class="campo__field" type="number" id="odontologo-id" name="odontologoId">
             </div>
             <div class="campo">
-                <button class="boton boton--primario" type="button" onclick="buscarPaciente()">Buscar Paciente</button>
-            </div>
-
-            <div class="campo">
-                <label class="campo__label" for="odontologo">Odontologo:</label>
-                <select id="odontologo" name="odontologo" required>
-                    <option disabled selected value="">Seleccione un odontólogo</option>
-                </select>
-            </div>
-
-            <div class="campo">
-                <label class="campo__label" for="apellido">Apellido:</label>
-                <input id="fecha" name="fecha" required type="date">
+                <label class="campo__label" for="fecha">Fecha:</label>
+                <input required class="campo__field" type="date" id="fecha" name="fecha">
             </div>
             <div class="campo">
                 <label class="campo__label" for="hora">Hora:</label>
-                <input id="hora" name="hora" required type="time">
+                <input required class="campo__field" type="time" id="hora" name="hora">
             </div>
             <div class="campo">
                 <input class="boton boton--primario" type="submit" value="Registrar">
             </div>
-
-
         </form>
-
     </section>
 
+    <section class="formulario formulario-turno" id="listar-turnos" style="display: none;">
+        <h1>Listar Turnos</h1>
+        <div class="tabla-turnos"></div>
+        <table id="tablaTurnos">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha y Hora</th>
+                <th>ID Odontólogo</th>
+                <th>Odontólogo</th>
+                <th>ID Paciente</th>
+                <th>Paciente</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
 
-</div>
-<footer class="footer">
-    <div class="contenedor">
-        <div class="barra">
-            <a class="logo" href="index.html">
-                <h1 class="logo__nombre no-margin centrar-texto">DH<span class="logo__bold">Odontologia</span></h1>
-            </a>
-            <nav class="navegacion">
-                <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
-                <a class="navegacion__enlace" href="pacientes.html">Registro</a>
-                <a class="navegacion__enlace" href="odontologos.html">Odontologos</a>
-                <a class="navegacion__enlace" href="turno.html">Turnos</a>
-            </nav>
+    <section class="formulario formulario-turno" id="buscar-turno" style="display: none;">
+        <form id="buscar-turno-form">
+            <h1>Buscar Turno</h1>
+            <div class="campo">
+                <label class="campo__label" for="turno-id">ID Turno:</label>
+                <input required class="campo__field" type="number" id="turno-id" name="id">
+            </div>
+            <div class="campo">
+                <input class="boton boton--primario" type="submit" value="Buscar">
+            </div>
+        </form>
+    </section>
+    <section id="resultado-busqueda" style="display: none;">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Datos del Turno</h5>
+                <div class="card-text" id="datos-turno">
+                </div>
+            </div>
         </div>
-    </div>
-</footer>
+    </section>
+
+    <section class="formulario formulario-turno" id="modificar-turno" style="display: none;">
+        <form id="formModificarTurno">
+            <h1>Modificar Turno</h1>
+            <div class="campo">
+                <label class="campo__label" for="modificar-paciente-id">ID Paciente:</label>
+                <input class="campo__field" type="number" id="modificar-paciente-id" name="pacienteId" required>
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="modificar-odontologo-id">ID Odontólogo:</label>
+                <input class="campo__field" type="number" id="modificar-odontologo-id" name="odontologoId" required>
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="modificar-fecha">Fecha:</label>
+                <input class="campo__field" type="date" id="modificar-fecha" name="fecha" required>
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="modificar-hora">Hora:</label>
+                <input class="campo__field" type="time" id="modificar-hora" name="hora" required>
+            </div>
+            <div class="campo">
+                <input class="boton boton--primario" type="submit" value="Modificar">
+                <button type="button" class="boton boton--primario" onclick="cancelarModificacionTurno()">Cancelar</button>
+            </div>
+        </form>
+    </section>
+</div>
+
+<script src="../js/turnos.js"></script>
 <script src="../js/script.js"></script>
 </body>
 

@@ -8,6 +8,7 @@ import com.backend.dto.salida.TurnoDtoSalida;
 import com.backend.entity.Odontologo;
 import com.backend.entity.Paciente;
 import com.backend.entity.Turno;
+import com.backend.exceptions.BadRequestException;
 import com.backend.exceptions.ResourceNotFoundException;
 import com.backend.repository.TurnoRepository;
 import com.backend.service.ITurnoService;
@@ -53,13 +54,23 @@ public class TurnosService implements ITurnoService {
 
     @Override
     @Transactional
-    public TurnoDtoSalida guardarTurno(TurnoDtoEntrada turnoDtoEntrada) throws ResourceNotFoundException {
+    public TurnoDtoSalida guardarTurno(TurnoDtoEntrada turnoDtoEntrada) {
         Turno turnoAGuardar = new Turno();
         turnoAGuardar.setFechaYHora(turnoDtoEntrada.getFechaYHora());
 
-        OdontologoDtoSalida odontologoDto = odontologoService.buscarOdontologo(turnoDtoEntrada.getOdontologoId());
+        OdontologoDtoSalida odontologoDto = null;
+        try {
+            odontologoDto = odontologoService.buscarOdontologo(turnoDtoEntrada.getOdontologoId());
+        } catch (ResourceNotFoundException e) {
+            throw new BadRequestException(e.getMessage());
+        }
 
-        PacienteDtoSalida pacienteDto = pacienteService.buscarPaciente(turnoDtoEntrada.getPacienteId());
+        PacienteDtoSalida pacienteDto = null;
+        try {
+            pacienteDto = pacienteService.buscarPaciente(turnoDtoEntrada.getPacienteId());
+        } catch (ResourceNotFoundException e) {
+            throw new BadRequestException(e.getMessage());
+        }
 
         Odontologo odontologo = modelMapper.map(odontologoDto, Odontologo.class);
         Paciente paciente = modelMapper.map(pacienteDto, Paciente.class);
@@ -100,11 +111,23 @@ public class TurnosService implements ITurnoService {
 
         turnoExistente.setFechaYHora(turnoDtoEntrada.getFechaYHora());
 
-        OdontologoDtoSalida odontologo = odontologoService.buscarOdontologo(turnoDtoEntrada.getOdontologoId());
+        OdontologoDtoSalida odontologo = null;
+
+        try {
+            odontologo = odontologoService.buscarOdontologo(turnoDtoEntrada.getOdontologoId());
+        } catch (ResourceNotFoundException e) {
+            throw new BadRequestException(e.getMessage());
+        }
 
         turnoExistente.setOdontologo(modelMapper.map(odontologo, Odontologo.class));
 
-        PacienteDtoSalida paciente = pacienteService.buscarPaciente(turnoDtoEntrada.getPacienteId());
+        PacienteDtoSalida paciente = null;
+
+        try {
+            paciente = pacienteService.buscarPaciente(turnoDtoEntrada.getPacienteId());
+        } catch (ResourceNotFoundException e) {
+            throw new BadRequestException(e.getMessage());
+        }
 
         turnoExistente.setPaciente(modelMapper.map(paciente, Paciente.class));
 

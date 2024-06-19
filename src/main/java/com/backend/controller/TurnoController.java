@@ -23,7 +23,7 @@ public class TurnoController {
 
     //POST
     @PostMapping("/registrar")
-    public TurnoDtoSalida registarTurno(@RequestBody TurnoDtoEntrada turnoDtoEntrada) throws ResourceNotFoundException {
+    public TurnoDtoSalida registarTurno(@RequestBody TurnoDtoEntrada turnoDtoEntrada) {
         return turnoService.guardarTurno(turnoDtoEntrada);
     }
 
