@@ -17,7 +17,7 @@ public class Paciente {
     private long id;
 
     @Column(length = 20, nullable = false)
-    private Long dni; // Cambiado a Long si deseas permitir nulos
+    private Long dni;
 
     @Column(length = 50, nullable = false)
     private String nombre;

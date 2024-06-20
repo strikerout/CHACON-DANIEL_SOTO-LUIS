@@ -21,13 +21,11 @@ public class TurnoController {
         this.turnoService = turnoService;
     }
 
-    //POST
     @PostMapping("/registrar")
     public TurnoDtoSalida registarTurno(@RequestBody TurnoDtoEntrada turnoDtoEntrada) {
         return turnoService.guardarTurno(turnoDtoEntrada);
     }
 
-    //GET
     @GetMapping("/listar")
     public List<TurnoDtoSalida> listarTurnos() {
         return turnoService.listarTodosLosTurnos();

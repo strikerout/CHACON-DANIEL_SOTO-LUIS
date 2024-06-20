@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 public class TurnoDtoEntrada {
-    private Long id;
     private LocalDateTime fechaYHora;
     private Long odontologoId;
     private Long pacienteId;
